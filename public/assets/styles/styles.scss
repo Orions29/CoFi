@@ -1,0 +1,86 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	height: 100vh;
+	position: relative;
+	z-index: 1; /* kasih konteks utama */
+	background: #f7f1de !important;
+}
+.homenaje-regular {
+	font-family: "Homenaje", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+header {
+	width: 100%;
+	color: #fff;
+	font-family: "Homenaje", sans-serif;
+	height: 25%;
+	.container-header {
+		position: relative;
+		padding: 10px 50px;
+		display: flex;
+		z-index: 12;
+		justify-content: space-between;
+		align-items: center;
+		background: #c1785a;
+		box-shadow: 0 6px 9.2px 2px rgba(0, 0, 0, 0.25);
+		.page-title {
+			h1 {
+				font-size: 4rem;
+			}
+		}
+		.admin-greet {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			p {
+				font-size: 1.8rem;
+				margin: 0;
+			}
+		}
+	}
+	.navbar-tabs {
+		position: relative;
+		z-index: 11;
+		width: 100%;
+		padding: 0 50px;
+		display: flex;
+		gap: 20px;
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+		.navbar-tab {
+			margin-top: -15px;
+			width: 180px;
+			height: 85px;
+			display: flex;
+			padding: 30px 10px 10px 10px;
+			justify-content: center;
+			align-items: center;
+			border-radius: 0 0 20px 20px;
+			background: #a8bba3;
+			box-shadow: 0 5px 6.4px 0 rgba(0, 0, 0, 0.25);
+			list-style-type: none;
+			font-size: 1.7rem;
+			transition: 0.3s all ease;
+			span {
+				font-size: 2rem;
+				padding-right: 10px;
+			}
+			&:hover {
+				margin-top: -8px;
+				background-color: #a8bba3;
+			}
+			&:active {
+				margin-top: 0px;
+			}
+		}
+	}
+}
