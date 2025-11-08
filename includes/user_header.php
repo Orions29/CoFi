@@ -3,7 +3,7 @@
 
 <head>
     <!-- Google Font -->
-    <title>Laman Admin</title>
+    <title>Laman User</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,storefront,supervised_user_circle" />
 </head>
 
@@ -11,7 +11,7 @@
     <header>
         <div class="container-header">
             <div class="page-title">
-                <h1>Admin Page</h1>
+                <h1>User Page</h1>
             </div>
             <div class="hero-logo">
                 <svg class="hero-logo-icons" viewBox="0 0 138 62" fill="none" xmlns="http://www.w3.org/2000/svg">
