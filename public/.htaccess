@@ -1,0 +1,8 @@
+# public/.htaccess
+RewriteEngine On
+# Jika request BUKAN file yang sudah ada (misalnya: styles.css, CoFi.png)
+RewriteCond %{REQUEST_FILENAME} !-f
+# Dan BUKAN direktori yang sudah ada
+RewriteCond %{REQUEST_FILENAME} !-d
+# Mengarahkan Semua request ke Index
+RewriteRule ^(.*)$ index.php [L,QSA]

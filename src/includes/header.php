@@ -1,6 +1,13 @@
 <?php
-if ($adminStatus) {
-    include 'admin_header.php';
+// Ambil status peran dari Session
+$userRole = $_SESSION['user_role'] ?? 'guest';
+
+// Cek peran dan include file yang sesuai
+if ($userRole === 'admin') {
+    // ➡️ Jika Peran Admin
+    include __DIR__ . '/admin_header.php';
 } else {
-    include 'user_header.php';
+    // ➡️ Jika Peran User Biasa (atau default lainnya)
+    // Walaupun namanya user_header, ini bisa juga jadi header default yang non-admin
+    include __DIR__ . '/user_header.php';
 }
