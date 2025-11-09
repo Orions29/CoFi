@@ -121,20 +121,35 @@ body {
 			display: flex;
 			justify-content: center;
 			margin-bottom: 35px;
+			&.regis {
+				margin-bottom: 20px;
+			}
 			.logo-form {
-				width: 250px;
+				width: 40%;
 				height: auto;
 				fill: #c1785a;
+				&.register {
+					width: 20%;
+					height: auto;
+				}
 			}
 		}
 		.form-title {
 			border-radius: 10px;
-			background: #305669;
 			width: 100%;
 			padding: 6px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			&.login {
+				background: #305669;
+			}
+			&.register {
+				background: #8abeb9;
+				h1 {
+					font-size: 1.4rem;
+				}
+			}
 			h1 {
 				font-family: "homenaje";
 				color: #fff;
@@ -145,12 +160,16 @@ body {
 		}
 		.form-main-container {
 			margin-top: 15px;
-			padding: 40px;
+			padding: 30px;
 			border-radius: 16px;
 			background: #fff;
-			label {
+			.form-label {
 				font-family: "homenaje";
 				font-size: 1.5rem;
+				&.regis {
+					font-size: 1.3rem;
+					margin-bottom: 2px;
+				}
 			}
 			input {
 				font-family: "segoe ui";
@@ -170,6 +189,15 @@ body {
 				.btn-submit {
 					font-size: 1.3rem;
 					font-family: "homenaje";
+				}
+			}
+			.name-birth-container {
+				width: 100%;
+				.full-name-regis {
+					width: 60%;
+				}
+				.birth-datepicker-regis {
+					width: 30%;
 				}
 			}
 		}

@@ -30,7 +30,7 @@ $pathToLoginHandler = __DIR__ . "/../Process/handle_login.php";
                     </g>
                 </svg>
             </header>
-            <div class="form-title">
+            <div class="form-title login">
                 <h1>Login Page</h1>
             </div>
             <div class="form-main-container">

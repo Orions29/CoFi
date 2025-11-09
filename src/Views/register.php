@@ -12,10 +12,10 @@ $pathToLoginHandler = __DIR__ . "/../Process/handle_login.php";
 </head>
 
 <body>
-    <div class="form-contents-wrapper">
+    <div class="form-contents-wrapper regis">
         <div class="form-wrapper">
-            <header class="login-header">
-                <svg class="logo-form" viewBox="0 0 138 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <header class="login-header regis">
+                <svg class="logo-form register" viewBox="0 0 138 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="CoFi Logo">
                         <g id="I">
                             <path id="I_2" d="M131.104 61.2045V14.6546H138V61.2045H131.104Z" />
@@ -30,24 +30,56 @@ $pathToLoginHandler = __DIR__ . "/../Process/handle_login.php";
                     </g>
                 </svg>
             </header>
-            <div class="form-title">
+            <div class="form-title register">
                 <h1>Register Page</h1>
             </div>
             <div class="form-main-container">
                 <form action="/" method="post">
                     <input type="hidden" name="action" value="login_attempt">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Username / Email</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usernameLogin" placeholder="coffeMaser29">
+                    <div class="mb-2">
+                        <label for="" class="form-label regis">Your Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emailRegis" placeholder="coffe@maker">
                     </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="passwordLogin" placeholder="password" required oninvalid="this.setCustomValidity('Woi, PASSWORD ISI DULU')" oninput="this.setCustomValidity('')">
+                    <div class="mb-2 name-birth-container d-flex justify-content-between">
+                        <div class="full-name-regis">
+                            <label for="" class="form-label regis">Your Full Name</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" name="fullNameRegis" placeholder="Coffe Maker" required oninvalid="this.setCustomValidity('Woi, namanya')" oninput="this.setCustomValidity('')">
+                        </div>
+                        <div class="birth-datepicker-regis">
+                            <label for="" class="form-label regis">Your Birtday</label>
+                            <input type="date" class="form-control">
+                        </div>
+
                     </div>
-                    <a href="/register"></a>
-                    <button class="btn btn-success btn-submit" type="submit">
-                        Login
-                    </button>
+                    <label for="" class="form-label regis">Select Your Job</label>
+                    <div class="form-floating mb-2">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Jobless</option>
+                            <option value="1">College Student</option>
+                            <option value="2">Salarry Man</option>
+                            <option value="3">Investor</option>
+                        </select>
+                        <label for="floatingSelect">Select Your Job</label>
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label regis">Create Username</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="usernameRegis" placeholder="yourUsername29" required oninvalid="this.setCustomValidity('Woi, PASSWORD ISI DULU')" oninput="this.setCustomValidity('')">
+                    </div>
+                    <label for="" class="form-label regis">Create Password</label>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="password" name="passwordLogin">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="bi bi-eye-slash" id="toggleIcon"></i>
+                        </button>
+                    </div>
+                    <div class="button-container d-flex justify-contents-start flex-column">
+                        <a href="/login">
+                            I Have Account Sir
+                        </a>
+                        <button class="btn btn-success btn-submit" type="submit">
+                            Register
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

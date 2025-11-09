@@ -124,19 +124,34 @@ body {
   justify-content: center;
   margin-bottom: 35px;
 }
+.form-contents-wrapper .form-wrapper .login-header.regis {
+  margin-bottom: 20px;
+}
 .form-contents-wrapper .form-wrapper .login-header .logo-form {
-  width: 250px;
+  width: 40%;
   height: auto;
   fill: #c1785a;
 }
+.form-contents-wrapper .form-wrapper .login-header .logo-form.register {
+  width: 20%;
+  height: auto;
+}
 .form-contents-wrapper .form-wrapper .form-title {
   border-radius: 10px;
-  background: #305669;
   width: 100%;
   padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.form-contents-wrapper .form-wrapper .form-title.login {
+  background: #305669;
+}
+.form-contents-wrapper .form-wrapper .form-title.register {
+  background: #8abeb9;
+}
+.form-contents-wrapper .form-wrapper .form-title.register h1 {
+  font-size: 1.4rem;
 }
 .form-contents-wrapper .form-wrapper .form-title h1 {
   font-family: "homenaje";
@@ -147,13 +162,17 @@ body {
 }
 .form-contents-wrapper .form-wrapper .form-main-container {
   margin-top: 15px;
-  padding: 40px;
+  padding: 30px;
   border-radius: 16px;
   background: #fff;
 }
-.form-contents-wrapper .form-wrapper .form-main-container label {
+.form-contents-wrapper .form-wrapper .form-main-container .form-label {
   font-family: "homenaje";
   font-size: 1.5rem;
+}
+.form-contents-wrapper .form-wrapper .form-main-container .form-label.regis {
+  font-size: 1.3rem;
+  margin-bottom: 2px;
 }
 .form-contents-wrapper .form-wrapper .form-main-container input {
   font-family: "segoe ui";
@@ -178,4 +197,13 @@ body {
 .form-contents-wrapper .form-wrapper .form-main-container .button-container .btn-submit {
   font-size: 1.3rem;
   font-family: "homenaje";
+}
+.form-contents-wrapper .form-wrapper .form-main-container .name-birth-container {
+  width: 100%;
+}
+.form-contents-wrapper .form-wrapper .form-main-container .name-birth-container .full-name-regis {
+  width: 60%;
+}
+.form-contents-wrapper .form-wrapper .form-main-container .name-birth-container .birth-datepicker-regis {
+  width: 30%;
 }/*# sourceMappingURL=styles.css.map */
