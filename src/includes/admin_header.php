@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="dashboard-header">
         <div class="container-header">
             <div class="page-title">
                 <h1>Admin Page</h1>
@@ -30,7 +30,7 @@
                 </svg>
             </div>
             <div class="admin-greet">
-                <p>Wellcome Back, Mr. Miyagi</p>
+                <a href="/logout">Wellcome Back, Mr. Miyagi</a>
             </div>
         </div>
         <nav class="navbar-tabs">

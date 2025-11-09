@@ -1,13 +1,34 @@
 <?php
 require __DIR__ . "/../src/Core/init.php";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    if ($_POST['action'] === 'login_attempt') {
+        // Panggil internal handler!
+        require __DIR__ . "/../src/Process/handle_login.php";
+        // handle_login.php harus diakhiri dengan redirect dan exit()
+    }
+    // Tambahin logic buat handle post form lain di sini (register, add_cafe, dll.)
+    // Wajib ada exit() setelah redirect di handler!
+    exit();
+}
+
 // Ngambil Routing dari browser kemudian ditampilin
 $requestUri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 $page = $requestUri ?: 'index';
+
+// Button Log Out
+if ($page === 'logout') {
+    // Panggil internal destroyer!
+    require __DIR__ . "/../src/Process/destroyer.php";
+    // destroyer.php akan redirect ke /login dan exit()
+    // jadi kode di bawah ini gak akan jalan.
+}
+
 // Ngambil variabel is logged in di handle_login
 $isLoggedIn = isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'];
 $viewsDir = __DIR__ . "/../src/Views/";
 $includesDir = __DIR__ . "/../src/includes/";
+
 // LOGIC AUTH 
 if (!$isLoggedIn) {
     if ($page !== 'login' && $page !== 'register') {
@@ -27,11 +48,13 @@ if (!$isLoggedIn) {
     $viewFile = $viewsDir . $page . ".php";
 }
 
+
 // Tentukan file yang akan di-load (final check)
 if (!file_exists($viewFile)) {
     $viewFile = $viewsDir . "404.php";
     $page = "404";
 }
+
 ?>
 <!doctype html>
 <html lang="en">

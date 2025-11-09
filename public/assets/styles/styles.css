@@ -18,14 +18,14 @@ body {
   font-style: normal;
 }
 
-header {
+.dashboard-header {
   width: 100%;
   height: 22%;
   overflow-x: hidden;
   color: #fff;
   font-family: "Homenaje", sans-serif;
 }
-header .container-header {
+.dashboard-header .container-header {
   position: relative;
   padding: 15px 50px;
   max-height: 60%;
@@ -36,32 +36,34 @@ header .container-header {
   background: #c1785a;
   box-shadow: 0 6px 9.2px 2px rgba(0, 0, 0, 0.25);
 }
-header .container-header .page-title {
+.dashboard-header .container-header .page-title {
   height: 100%;
   display: flex;
   align-items: center;
 }
-header .container-header .page-title h1 {
+.dashboard-header .container-header .page-title h1 {
   margin: 0;
   font-size: 2.5rem;
 }
-header .container-header .hero-logo {
+.dashboard-header .container-header .hero-logo {
   height: 100%;
 }
-header .container-header .hero-logo .hero-logo-icons {
+.dashboard-header .container-header .hero-logo .hero-logo-icons {
   height: 50px;
   fill: #f7f1de;
 }
-header .container-header .admin-greet {
+.dashboard-header .container-header .admin-greet {
   height: 100%;
   display: flex;
   align-items: center;
 }
-header .container-header .admin-greet p {
+.dashboard-header .container-header .admin-greet a {
+  color: #fff;
+  text-decoration: none;
   font-size: 1.5rem;
   margin: 0;
 }
-header .navbar-tabs {
+.dashboard-header .navbar-tabs {
   position: relative;
   z-index: 11;
   width: 100%;
@@ -70,11 +72,11 @@ header .navbar-tabs {
   justify-content: start;
   gap: 20px;
 }
-header .navbar-tabs a {
+.dashboard-header .navbar-tabs a {
   text-decoration: none;
   color: #fff;
 }
-header .navbar-tabs .navbar-tab {
+.dashboard-header .navbar-tabs .navbar-tab {
   margin-top: -15px;
   width: 180px;
   height: 65px;
@@ -89,15 +91,91 @@ header .navbar-tabs .navbar-tab {
   font-size: 1.5rem;
   transition: 0.3s all ease;
 }
-header .navbar-tabs .navbar-tab span {
+.dashboard-header .navbar-tabs .navbar-tab span {
   font-size: 2rem;
   padding-right: 10px;
 }
-header .navbar-tabs .navbar-tab:hover {
+.dashboard-header .navbar-tabs .navbar-tab:hover {
   margin-top: -8px;
   background-color: #a8bba3;
 }
-header .navbar-tabs .navbar-tab:active {
+.dashboard-header .navbar-tabs .navbar-tab:active {
   margin-top: 0px;
   box-shadow: none;
+}
+
+.form-contents-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-contents-wrapper .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+.form-contents-wrapper .form-wrapper .login-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+.form-contents-wrapper .form-wrapper .login-header .logo-form {
+  width: 250px;
+  height: auto;
+  fill: #c1785a;
+}
+.form-contents-wrapper .form-wrapper .form-title {
+  border-radius: 10px;
+  background: #305669;
+  width: 100%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-contents-wrapper .form-wrapper .form-title h1 {
+  font-family: "homenaje";
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+.form-contents-wrapper .form-wrapper .form-main-container {
+  margin-top: 15px;
+  padding: 40px;
+  border-radius: 16px;
+  background: #fff;
+}
+.form-contents-wrapper .form-wrapper .form-main-container label {
+  font-family: "homenaje";
+  font-size: 1.5rem;
+}
+.form-contents-wrapper .form-wrapper .form-main-container input {
+  font-family: "segoe ui";
+}
+.form-contents-wrapper .form-wrapper .form-main-container input::-moz-placeholder {
+  font-family: "segoe ui";
+  color: rgba(48, 86, 105, 0.4235294118);
+}
+.form-contents-wrapper .form-wrapper .form-main-container input::placeholder {
+  font-family: "segoe ui";
+  color: rgba(48, 86, 105, 0.4235294118);
+}
+.form-contents-wrapper .form-wrapper .form-main-container .button-container {
+  width: 20%;
+  gap: 10px;
+}
+.form-contents-wrapper .form-wrapper .form-main-container .button-container a {
+  font-family: "segoe ui";
+  color: #c1785a;
+  text-decoration: none;
+}
+.form-contents-wrapper .form-wrapper .form-main-container .button-container .btn-submit {
+  font-size: 1.3rem;
+  font-family: "homenaje";
 }/*# sourceMappingURL=styles.css.map */
