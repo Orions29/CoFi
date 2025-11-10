@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Google Font -->
     <title>Laman Admin</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,storefront,supervised_user_circle" />
 </head>
@@ -30,7 +29,9 @@
                 </svg>
             </div>
             <div class="admin-greet">
-                <a href="/logout">Wellcome Back, Mr. Miyagi</a>
+                <a href="/logout">Wellcome Back, <?php
+                                                    echo htmlspecialchars($_SESSION['testingUser']);
+                                                    ?></a>
             </div>
         </div>
         <nav class="navbar-tabs">
