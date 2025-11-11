@@ -3,6 +3,7 @@ session_start();
 
 // Ngambil Koneksi Database
 require __DIR__ . "/database.php";
+require __DIR__ . "/router.php";
 
 // Path Section
 $pathToHeader = __DIR__ . "/../includes/header.php";

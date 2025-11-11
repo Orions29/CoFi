@@ -1,3 +1,5 @@
+# Buat Ngasih tau browser mana yang boleh di akses 
+
 # public/.htaccess
 RewriteEngine On
 # Jika request BUKAN file yang sudah ada (misalnya: styles.css, CoFi.png)
