@@ -3,7 +3,6 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
 body {
 	font-family: "Poppins", sans-serif;
 	height: 100vh;
@@ -13,17 +12,32 @@ body {
 }
 .homenaje-regular {
 	font-family: "Homenaje", sans-serif;
-	font-weight: 400;
+	font-weight: 200;
 	font-style: normal;
 }
-header {
+.alerta-container {
+	display: flex;
+	justify-content: center;
 	width: 100%;
+	.alerta {
+		width: 90%;
+		border-radius: 20px;
+		z-index: 3;
+		position: absolute;
+	}
+}
+// Default Header Section
+.dashboard-header {
+	width: 100%;
+	height: 24%;
+	overflow-x: hidden;
 	color: #fff;
 	font-family: "Homenaje", sans-serif;
-	height: 25%;
+	// Default Header
 	.container-header {
 		position: relative;
-		padding: 10px 50px;
+		padding: 15px 50px;
+		max-height: 60%;
 		display: flex;
 		z-index: 12;
 		justify-content: space-between;
@@ -31,26 +45,44 @@ header {
 		background: #c1785a;
 		box-shadow: 0 6px 9.2px 2px rgba(0, 0, 0, 0.25);
 		.page-title {
+			height: 100%;
+			display: flex;
+			align-items: center;
 			h1 {
-				font-size: 4rem;
+				margin: 0;
+				font-size: 2.5rem;
+			}
+		}
+		.hero-logo {
+			height: 100%;
+			.hero-logo-icons {
+				height: 50px;
+				fill: #f7f1de;
 			}
 		}
 		.admin-greet {
 			height: 100%;
 			display: flex;
 			align-items: center;
-			p {
-				font-size: 1.8rem;
+			width: 15%;
+			a {
+				text-align: right;
+				width: 100%;
+				color: #fff;
+				text-decoration: none;
+				font-size: 1.5rem;
 				margin: 0;
 			}
 		}
 	}
+	// Default NavBar
 	.navbar-tabs {
 		position: relative;
 		z-index: 11;
 		width: 100%;
 		padding: 0 50px;
 		display: flex;
+		justify-content: start;
 		gap: 20px;
 		a {
 			text-decoration: none;
@@ -59,7 +91,7 @@ header {
 		.navbar-tab {
 			margin-top: -15px;
 			width: 180px;
-			height: 85px;
+			height: 65px;
 			display: flex;
 			padding: 30px 10px 10px 10px;
 			justify-content: center;
@@ -68,7 +100,7 @@ header {
 			background: #a8bba3;
 			box-shadow: 0 5px 6.4px 0 rgba(0, 0, 0, 0.25);
 			list-style-type: none;
-			font-size: 1.7rem;
+			font-size: 1.5rem;
 			transition: 0.3s all ease;
 			span {
 				font-size: 2rem;
@@ -80,6 +112,117 @@ header {
 			}
 			&:active {
 				margin-top: 0px;
+				box-shadow: none;
+			}
+		}
+	}
+}
+.form-contents-wrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	// Buat Halaman Registration
+	&.regis {
+		margin-top: 40px;
+	}
+	.form-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		width: 45%;
+		// border: solid #305669;
+		&.regis {
+			margin-bottom: 40px;
+		}
+		.login-header {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 35px;
+			&.regis {
+				margin-bottom: 20px;
+			}
+			.logo-form {
+				width: 40%;
+				height: auto;
+				fill: #c1785a;
+				&.register {
+					width: 30%;
+					height: auto;
+				}
+			}
+		}
+		.form-title {
+			border-radius: 10px;
+			width: 100%;
+			padding: 6px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&.login {
+				background: #305669;
+			}
+			&.register {
+				background: #8abeb9;
+				h1 {
+					font-size: 1.6rem;
+				}
+			}
+			h1 {
+				font-family: "homenaje";
+				color: #fff;
+				text-align: center;
+				font-size: 2rem;
+				margin: 0;
+			}
+		}
+		.form-main-container {
+			margin-top: 15px;
+			padding: 25px;
+			border-radius: 16px;
+			background: #fff;
+			.form-label {
+				font-family: "homenaje";
+				font-size: 1.5rem;
+				// Buat Registration
+				&.regis {
+					font-size: 1.3rem;
+					margin-bottom: 2px;
+				}
+			}
+			input {
+				font-family: "segoe ui";
+				&::placeholder {
+					font-family: "segoe ui";
+					color: #3056696c;
+				}
+			}
+			.button-container {
+				width: 30%;
+				gap: 10px;
+				a {
+					font-family: "segoe ui";
+					color: #c1785a;
+					text-decoration: none;
+				}
+				.btn-submit {
+					width: 70%;
+					font-size: 1.3rem;
+					font-family: "homenaje";
+				}
+			}
+			// For Registration
+			.name-birth-container {
+				width: 100%;
+				.full-name-regis {
+					width: 60%;
+				}
+				.birth-datepicker-regis {
+					width: 35%;
+				}
 			}
 		}
 	}

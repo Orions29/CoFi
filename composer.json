@@ -1,0 +1,18 @@
+{
+    "name": "orions29/cofi.cafe",
+    "description": "Pencari Cafe",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orions29\\CofiCafe\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rio Meidi Ataurrahman",
+            "email": "riomeidi29@gmail.com"
+        }
+    ]
+}
