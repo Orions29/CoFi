@@ -2,13 +2,13 @@
 
 // Setiap Post akan melewati ini jadi apapun postnya akan langsung di handling
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-
     // Kalau POstnya Buat Login Attempt maka langsung dikasi ke php login Handler
     if ($_POST['action'] === 'login_attempt') {
         // Manggil Login Handler
         require __DIR__ . "/../Process/handler_login.php";
         // handler.php harus diakhiri dengan redirect dan exit()
-    } else if ($_POST['action'] === 'registration_attempt') {
+    } else if ($_POST['action'] === 'regis_attempt') {
+
         require __DIR__ . "/../Process/handler_regis.php";
     }
     // Tambahin logic buat handle post form lain di sini (register, add_cafe, dan kawan kawan)
@@ -41,10 +41,12 @@ $isLoggedIn = isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'];
 if (!$isLoggedIn) {
     // TODO - Buat nanti guest dikasi kemari
     if ($page !== 'login' && $page !== 'register') {
+
         header("Location: /login"); // Tendang ke /login
         exit();
+    } else {
+        $viewFile = $viewsDir . $page . ".php";
     }
-    $viewFile = $viewsDir . $page . ".php";
 } else {
     // Sudah Login
     if ($page === 'index') {

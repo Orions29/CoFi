@@ -25,9 +25,9 @@ $pageTitle = "Laman Admin";
             </svg>
         </div>
         <div class="admin-greet">
-            <a href="/logout">Wellcome Back, <?php
-                                                echo htmlspecialchars($_SESSION['testingUser']);
-                                                ?></a>
+            <a href="/logout">Welcome Back, <?php
+                                            echo htmlspecialchars($_SESSION['username']);
+                                            ?></a>
         </div>
     </div>
     <nav class="navbar-tabs">

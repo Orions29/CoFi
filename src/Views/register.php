@@ -1,11 +1,11 @@
 <?php
-// session_start();
-// $pathToLoginHandler = __DIR__ . "/../Process/handle_login.php";
-// $pageTitle = "Registration Page";
+// Salting Procedure
+$regisSalt = $_ENV['REGIS_SALT'];
+$_SESSION['regis_token'] = $regisSalt . bin2hex(random_bytes(20));
+unset($_SESSION['login_token']);
 ?>
-
 <div class="form-contents-wrapper regis">
-    <div class="form-wrapper">
+    <div class="form-wrapper regis">
         <header class="login-header regis">
             <svg class="logo-form register" viewBox="0 0 138 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="CoFi Logo">
@@ -27,10 +27,13 @@
         </div>
         <div class="form-main-container">
             <form action="/" method="post">
-                <input type="hidden" name="action" value="registration_attempt">
+                <input type="hidden" name="action" value="regis_attempt">
+                <input type="hidden" name="regis_token_attempt" value="<?php
+                                                                        echo $_SESSION['regis_token'];
+                                                                        ?>">
                 <div class="mb-2">
                     <label for="" class="form-label regis">Your Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emailRegis" placeholder="coffe@maker">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userEmailRegis" placeholder="coffe@maker" required>
                 </div>
                 <div class="mb-2 name-birth-container d-flex justify-content-between">
                     <div class="full-name-regis">
@@ -39,17 +42,17 @@
                     </div>
                     <div class="birth-datepicker-regis">
                         <label for="" class="form-label regis">Your Birtday</label>
-                        <input type="date" class="form-control">
+                        <input type="date" name="birthRegis" class="form-control">
                     </div>
 
                 </div>
                 <label for="" class="form-label regis">Select Your Job</label>
                 <div class="form-floating mb-2">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Jobless</option>
-                        <option value="1">College Student</option>
-                        <option value="2">Salarry Man</option>
-                        <option value="3">Investor</option>
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="jobRegis">
+                        <option selected value="Jobless">Jobless</option>
+                        <option value="College">College Student</option>
+                        <option value="Salarry Man">Salarry Man</option>
+                        <option value="Investor">Investor</option>
                     </select>
                     <label for="floatingSelect">Select Your Job</label>
                 </div>
@@ -59,7 +62,7 @@
                 </div>
                 <label for="" class="form-label regis">Create Password</label>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="password" name="passwordLogin">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="password" name="passwordRegis" required>
                     <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                         <i class="bi bi-eye-slash" id="toggleIcon"></i>
                     </button>

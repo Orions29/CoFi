@@ -1,9 +1,9 @@
 <?php
 // Ambil status peran dari Session
-$userRole = $_SESSION['user_role'] ?? 'guest';
+// $userRole = $_SESSION['user_role'] ?? 'guest';
 
 // Cek peran dan include file yang sesuai
-if ($userRole === 'admin') {
+if ($_SESSION['user_role'] === 'admin') {
     // ➡️ Jika Peran Admin
     include __DIR__ . '/admin_header.php';
 } else {

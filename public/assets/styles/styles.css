@@ -18,6 +18,18 @@ body {
   font-style: normal;
 }
 
+.alerta-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.alerta-container .alerta {
+  width: 90%;
+  border-radius: 20px;
+  z-index: 3;
+  position: absolute;
+}
+
 .dashboard-header {
   width: 100%;
   height: 24%;
@@ -124,6 +136,9 @@ body {
   justify-content: center;
   height: 100%;
   width: 45%;
+}
+.form-contents-wrapper .form-wrapper.regis {
+  margin-bottom: 40px;
 }
 .form-contents-wrapper .form-wrapper .login-header {
   display: flex;

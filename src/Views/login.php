@@ -1,6 +1,8 @@
 <?php
-// $pathToLoginHandler = __DIR__ . "/../Process/handle_login.php";
-// $pageTitle = "Login Page";
+// Salting Procedure
+$loginSalt = $_ENV['LOGIN_SALT'];
+$_SESSION['login_token'] = $loginSalt . bin2hex(random_bytes(20));
+unset($_SESSION['regis_token']);
 ?>
 
 <div class="form-contents-wrapper">
@@ -27,9 +29,10 @@
         <div class="form-main-container">
             <form action="/" method="post">
                 <input type="hidden" name="action" value="login_attempt">
+                <input type="hidden" name="login_token_attempt" value="<?= $_SESSION['login_token'] ?>">
                 <div class="mb-3">
                     <label for="" class="form-label">Username / Email</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usernameLogin" placeholder="coffeMaser29">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usernameLogin" placeholder="coffeMaser29" required>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Password</label>

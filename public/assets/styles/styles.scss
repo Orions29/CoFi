@@ -15,6 +15,17 @@ body {
 	font-weight: 200;
 	font-style: normal;
 }
+.alerta-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	.alerta {
+		width: 90%;
+		border-radius: 20px;
+		z-index: 3;
+		position: absolute;
+	}
+}
 // Default Header Section
 .dashboard-header {
 	width: 100%;
@@ -124,6 +135,9 @@ body {
 		height: 100%;
 		width: 45%;
 		// border: solid #305669;
+		&.regis {
+			margin-bottom: 40px;
+		}
 		.login-header {
 			display: flex;
 			justify-content: center;
