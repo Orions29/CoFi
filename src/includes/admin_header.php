@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,storefront,supervised_user_circle" />
+<!-- Khusus Admin -->
+<link rel="stylesheet" href="/assets/styles/admin/styles_admin.css">
 <header class="dashboard-header">
     <div class="container-header">
         <div class="page-title">

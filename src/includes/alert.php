@@ -3,17 +3,18 @@
 foreach ($_SESSION['alert'] as $alerta):
 ?>
     <div class="alerta-container">
-        <div class="alert alert-danger alerta" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show alerta" role="alert">
             <strong>
                 <?php
-                echo $alerta['type']
+                echo htmlspecialchars($alerta['type']);
                 ?>
             </strong>
             <p>
                 <?php
-                echo $alerta['message']
+                echo htmlspecialchars($alerta['message']);
                 ?>
             </p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
     <?php
@@ -34,6 +35,7 @@ if (isset($_SESSION['alert_success'])):
                     echo $alerta['message']
                     ?>
                 </p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
 <?php

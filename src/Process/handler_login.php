@@ -17,6 +17,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'login_attempt') {
             // kalau ada usernya
             if (!empty($rows_selectLoginUser)) {
                 if (password_verify($_POST['passwordLogin'], $rows_selectLoginUser['user_password'])) {
+                    // Ngambil ID baru session agar kena pembatasan
+                    session_regenerate_id();
                     $_SESSION['is_logged_in'] = true;
                     $_SESSION['username'] = $rows_selectLoginUser['username'];
                     // Pengendali admin atau user

@@ -2,10 +2,19 @@
 
 // Nangkep Post
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-    if ($_POST['action'] === 'login_attempt') {
-        require __DIR__ . "/../Process/handler_login.php";
-    } else if ($_POST['action'] === 'regis_attempt') {
-        require __DIR__ . "/../Process/handler_regis.php";
+    $handlerAction = $_POST['action'];
+    switch ($handlerAction) {
+        case 'login_attempt':
+            require __DIR__ . "/../Process/handler_login.php";
+            break;
+        case 'regis_attempt':
+            require __DIR__ . "/../Process/handler_regis.php";
+            break;
+        case 'add_cafe_attempt':
+            require __DIR__ . "/../Process/handler_add_cafe.php";
+            break;
+        default:
+            break;
     }
     exit();
 }
@@ -48,6 +57,16 @@ $routes = [
     'admin/usermanage' => [
         'file' => 'admin_usermanage',
         'title' => 'ADMIN | User Management',
+        'auth' => 'admin'
+    ],
+    'cafe/add' => [
+        'file' => 'admin_add_cafe',
+        'title' => 'ADMIN | Tambah Cafe',
+        'auth' => 'admin'
+    ],
+    'cafe/update' => [
+        'file' => 'admin_update_cafe',
+        'title' => 'ADMIN | Update Cafe',
         'auth' => 'admin'
     ],
     'logout' => [
@@ -129,6 +148,7 @@ if ($authRule === 'user_or_admin' && $userRole === 'guest') {
 $includesDir = __DIR__ . "/../includes/";
 $viewsDir = __DIR__ . "/../Views/";
 $viewsDirAdmin = __DIR__ . "/../Views/admin/";
+$uploadDir = __DIR__ . "/../../uploads";
 
 if ($page === 'logout_handler') {
     require __DIR__ . "/../Process/destroyer.php";

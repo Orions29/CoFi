@@ -1,0 +1,93 @@
+.main-container {
+	width: 100%;
+	&.cafe-editor {
+		padding: 10px 50px;
+		display: flex;
+	}
+}
+// Form Wrapper
+.edit-cafe-wrapper {
+	padding: 10px;
+	border-radius: 10px;
+	background: #fff;
+	width: 100%;
+	h1 {
+		font-size: 2.6rem;
+		text-align: center;
+	}
+
+	.cafe-form-wrapper {
+		padding: 0px 21px;
+		width: 100%;
+		display: flex;
+		label {
+			font-family: "homenaje";
+			font-size: 1.3rem;
+			margin: 0;
+		}
+		.wrapper {
+			padding: 15px;
+			#categoryCafeContainer {
+				.btn {
+					border-radius: 5px;
+					background: #c1785a;
+					color: #fff;
+					font-family: "homenaje";
+					font-size: 1.3rem;
+				}
+				label {
+					font-size: 1rem;
+					font-family: "segoe ui";
+				}
+			}
+		}
+		.left-wrapper {
+			width: 50%;
+			.price-wrapper {
+				gap: 15px;
+			}
+		}
+		.right-wrapper {
+			width: 50%;
+		}
+	}
+}
+span#selectedCategoriesDisplay.text-muted {
+	display: block;
+	height: max-content;
+	width: 80%;
+	.badge {
+		padding: 5px 7px;
+		font-size: 1.3rem;
+		font-family: "Caveat";
+		font-weight: 100;
+		.btn-close {
+			width: 4px;
+			height: auto;
+		}
+	}
+	.badge.text-bg-secondary {
+		color: #fff !important;
+		&.cat-productivity {
+			background-color: #84994f !important;
+		}
+		&.cat-social {
+			background-color: #fcb53b !important;
+		}
+		&.cat-roastery {
+			background-color: #c1785a !important;
+		}
+	}
+}
+.add-cafe-container {
+	// height: 100%;
+	padding-right: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	.add-cafe {
+		font-size: 1.3rem;
+		color: #fff;
+		background-color: #84994f;
+	}
+}
