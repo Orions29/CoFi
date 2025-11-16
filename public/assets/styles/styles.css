@@ -140,6 +140,9 @@ body {
 .form-contents-wrapper .form-wrapper.regis {
   margin-bottom: 40px;
 }
+.form-contents-wrapper .form-wrapper .form-cafe {
+  width: 100%;
+}
 .form-contents-wrapper .form-wrapper .login-header {
   display: flex;
   justify-content: center;

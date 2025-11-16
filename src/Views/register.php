@@ -42,7 +42,7 @@ unset($_SESSION['login_token']);
                     </div>
                     <div class="birth-datepicker-regis">
                         <label for="" class="form-label regis">Your Birtday</label>
-                        <input type="date" name="birthRegis" class="form-control">
+                        <input type="date" name="birthRegis" class="form-control" required>
                     </div>
 
                 </div>

@@ -1,66 +1,110 @@
 <?php
 
-// Setiap Post akan melewati ini jadi apapun postnya akan langsung di handling
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-    // Kalau POstnya Buat Login Attempt maka langsung dikasi ke php login Handler
     if ($_POST['action'] === 'login_attempt') {
-        // Manggil Login Handler
         require __DIR__ . "/../Process/handler_login.php";
-        // handler.php harus diakhiri dengan redirect dan exit()
     } else if ($_POST['action'] === 'regis_attempt') {
-
         require __DIR__ . "/../Process/handler_regis.php";
     }
-    // Tambahin logic buat handle post form lain di sini (register, add_cafe, dan kawan kawan)
+    // logic buat handle post form lain di sini (register, add_cafe, dan kawan kawan)
 
-    // Wajib ada exit() setelah redirect di handler
-    exit();
+    exit(); // Wajib ada exit() setelah redirect di handler
 }
 
 // Ngambil Routing dari browser kemudian ditampilin
 $requestUri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-// Kalau request Uri itu kosong balikin ke index
 $page = $requestUri ?: 'index';
 $pageTitle = "";
 
+// Daftar Header URI yang bisa dipanggil
+$routeMap = [
+    'user/map' => 'map',
+    'user/saved-cafe' => 'saved_cafe',
+
+    'cafe/add' => 'add_cafe',
+    'cafe/update' => 'update_cafe',
+
+    'admin/usermanage' => 'admin_usermanage',
+    'admin/dashboard' => 'admin_dashboard'
+];
+
+// Terapkan alias
+if (isset($routeMap[$page])) {
+    $page = $routeMap[$page];
+}
+
 // Buat Button Logout
 if ($page === 'logout') {
-    // Manggil destroyer of the session
     require __DIR__ . "/../Process/destroyer.php";
-    // destroyer.php nge redirect ke /login dan exit()
-    // Lalu Keluar
 }
 
 // Path Ke Views dan Include
 $viewsDir = __DIR__ . "/../Views/";
+$viewsDirAdmin = __DIR__ . "/../Views/admin/";
 $includesDir = __DIR__ . "/../includes/";
 
-// Ngambil variabel is logged in di handle_login
+// Ngambil variabel is logged in dan role admin
 $isLoggedIn = isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'];
-// LOGIC AUTH 
-if (!$isLoggedIn) {
-    // TODO - Buat nanti guest dikasi kemari
-    if ($page !== 'login' && $page !== 'register') {
+$isAdmin = isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin';
 
-        header("Location: /login"); // Tendang ke /login
+// Auth LOGIC
+if (!$isLoggedIn) {
+    // Guest Logic
+    // Kalo belum login, cuma boleh akses login & register
+    if ($page !== 'login' && $page !== 'register') {
+        header("Location: /login");
         exit();
-    } else {
-        $viewFile = $viewsDir . $page . ".php";
     }
+    $viewFile = $viewsDir . $page . ".php"; // Tetap di Views/
 } else {
     // Sudah Login
-    if ($page === 'index') {
-        $page = 'dashboard';
-    }
-    if ($page === 'login') {
-        // Kita turunin dulu boy
-        // || $page === 'register'
-        header("Location: /dashboard");
+
+    // Kalo dah login ga ke login dan register
+    if ($page === 'index' || $page === 'login' || $page === 'register') {
+        // Jika sudah login, tendang ke dashboard mereka
+        if ($isAdmin) {
+            header("Location: /admin/dashboard"); // Asumsi URL admin dashboard
+        } else {
+            header("Location: /dashboard"); // URL user dashboard
+        }
         exit();
     }
-    $viewFile = $viewsDir . $page . ".php";
+
+    // User Restrict
+    $halamanAdmin = ['admin_dashboard', 'admin_usermanage', 'add_cafe', 'update_cafe'];
+    if (!$isAdmin && in_array($page, $halamanAdmin)) {
+        header("Location: /dashboard"); // Tendang ke dashboard user
+        exit();
+    }
+
+    // Admin Restrict
+    $halamanUser = ['dashboard', 'map']; // 'user_dashboard' udah jadi 'dashboard'
+    if ($isAdmin && in_array($page, $halamanUser)) {
+        header("Location: /admin/dashboard"); // Tendang ke dashboard admin
+        exit();
+    }
+
+    // Pengubah viewsFile yang nandi di include di index
+    $viewFile = $viewsDir . $page . ".php"; // Set default ke folder Views/
+
+    if ($isAdmin) {
+        // Kalo admin, kita cek folder admin
+        // Ngecek depannya ada adminnya ndak kalau belum dikasi langsung admin_
+        $adminViewName = str_starts_with($page, 'admin_') ? $page : 'admin_' . $page;
+
+        // Buat path ke Views/admin/
+        $adminViewFile = $viewsDirAdmin . $adminViewName . ".php";
+
+        // Ngecek Apakah File Admin ada di direktori Admin
+        if (file_exists($adminViewFile)) {
+            // Timpa viewFile dengan path admin
+            $viewFile = $adminViewFile;
+            $page = $adminViewName; // Update $page agar Title Tab-nya benar
+        }
+    }
 }
-// Tentukan file yang akan di-load (final check)
+
+// File yang akan ke load
 if (!file_exists($viewFile)) {
     $viewFile = $viewsDir . "404.php";
     $page = "404";
@@ -68,8 +112,20 @@ if (!file_exists($viewFile)) {
 
 // Buat Nentuin Title Tab
 switch ($page) {
+    case 'admin_dashboard':
+        $pageTitle = "ADMIN | Dashboard";
+        break;
+    case 'admin_usermanage':
+        $pageTitle = "ADMIN | User Management";
+        break;
     case 'dashboard':
         $pageTitle = "Dashboard |";
+        break;
+    case 'map': // Tambahin case buat title-nya
+        $pageTitle = "Peta Kedai";
+        break;
+    case 'add_cafe':
+        $pageTitle = "Tambah Kedai";
         break;
     case 'login':
         $pageTitle = "Masuk ke CoFi";

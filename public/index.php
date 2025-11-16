@@ -26,9 +26,6 @@ require __DIR__ . "/../src/Core/init.php";
 
 <body>
     <?php
-    // Ngecek SQL Connector
-    // var_dump($sqlConn);
-
     // halaman-halaman yang GAK boleh nampil header
     $noHeaderPages = ['404', 'login', 'register'];
     // Cek apakah user sudah login DAN halaman BUKAN halaman yang dikecualikan
@@ -40,7 +37,8 @@ require __DIR__ . "/../src/Core/init.php";
     if (isset($_SESSION['alert'])) {
         include $includesDir . "/alert.php";
     }
-    var_dump($_SESSION);
+    // Buat Debugging
+    // var_dump($_SESSION);
 
     // Nampilin Konten di Views
     include $viewFile;

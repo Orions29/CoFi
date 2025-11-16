@@ -21,6 +21,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'login_attempt') {
                     $_SESSION['username'] = $rows_selectLoginUser['username'];
                     // Pengendali admin atau user
                     $_SESSION['user_role'] = ($rows_selectLoginUser['admin_stat'] == 1) ? 'admin' : 'user';
+                    // Kalau Bener Logged In
+                    header("Location: /");
+                    exit();
                 } else {
                     $_SESSION['alert'][] = [
                         'type' => 'login_failed',
@@ -55,5 +58,5 @@ if (isset($_POST['action']) && $_POST['action'] == 'login_attempt') {
 // Ngeredirect ke Dashboard
 
 // Harusnya ga sampe sini
-header("Location: /");
+header("Location: /login");
 exit();

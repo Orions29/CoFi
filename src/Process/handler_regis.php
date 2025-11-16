@@ -22,6 +22,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'regis_attempt') {
             $stmt_insertNewUserDetails->execute();
             $stmt_insertNewUserDetails->close();
             $sqlConn->commit();
+
+            $_SESSION['alert_success'][] = [
+                'type' => 'Registration Comple',
+                'message' => 'Berhasil Membuat Akun'
+            ];
         } catch (\Throwable $th) {
             $sqlConn->rollback();
             $_SESSION['alert'][] = [

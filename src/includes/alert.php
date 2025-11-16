@@ -16,8 +16,28 @@ foreach ($_SESSION['alert'] as $alerta):
             </p>
         </div>
     </div>
-<?php
+    <?php
 endforeach;
 unset($_SESSION['alert']);
-// Kodemu Disini 
+if (isset($_SESSION['alert_success'])):
+    foreach ($_SESSION['alert_success'] as $alerta):
+    ?>
+        <div class="alerta-container">
+            <div class="alert alert-success alerta" role="alert">
+                <strong>
+                    <?php
+                    echo $alerta['type']
+                    ?>
+                </strong>
+                <p>
+                    <?php
+                    echo $alerta['message']
+                    ?>
+                </p>
+            </div>
+        </div>
+<?php
+    endforeach;
+endif;
+unset($_SESSION['alert_success']);
 ?>
