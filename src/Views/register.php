@@ -31,37 +31,37 @@ unset($_SESSION['login_token']);
                 <input type="hidden" name="regis_token_attempt" value="<?php
                                                                         echo $_SESSION['regis_token'];
                                                                         ?>">
-                <div class="mb-2">
-                    <label for="" class="form-label regis">Your Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userEmailRegis" placeholder="coffe@maker" required>
+                <div class="mb-2" id="emailRegisContainer">
+                    <label for="userEmailRegis" class="form-label regis">Your Email</label>
+                    <input type="email" class="form-control" aria-describedby="emailHelp" id="userEmailRegis" name="userEmailRegis" placeholder="coffe@maker" required>
                 </div>
                 <div class="mb-2 name-birth-container d-flex justify-content-between">
-                    <div class="full-name-regis">
-                        <label for="" class="form-label regis">Your Full Name</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" name="fullNameRegis" placeholder="Coffe Maker" required oninvalid="this.setCustomValidity('Woi, namanya')" oninput="this.setCustomValidity('')">
+                    <div class="full-name-regis" id="fullNameRegisContainer">
+                        <label for="fullNameRegis" class="form-label regis">Your Full Name</label>
+                        <input type="text" class="form-control" id="fullNameRegis" name="fullNameRegis" placeholder="Coffe Maker" required oninvalid="this.setCustomValidity('Woi, namanya')" oninput="this.setCustomValidity('')">
                     </div>
-                    <div class="birth-datepicker-regis">
-                        <label for="" class="form-label regis">Your Birtday</label>
-                        <input type="date" name="birthRegis" class="form-control" required>
+                    <div class="birth-datepicker-regis" id="bithRegisContainer">
+                        <label for="birthRegis" class="form-label regis">Your Birtday</label>
+                        <input type="date" id="birthRegis" name="birthRegis" class="form-control" required>
                     </div>
 
                 </div>
-                <label for="" class="form-label regis">Select Your Job</label>
-                <div class="form-floating mb-2">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="jobRegis">
+                <label for="jobRegis" class="form-label regis">Select Your Job</label>
+                <div class="form-floating mb-2" id="jobRegisContainer">
+                    <select class="form-select" id="jobRegis" name="jobRegis" aria-label="Floating label select example">
                         <option selected value="Jobless">Jobless</option>
                         <option value="College">College Student</option>
                         <option value="Salarry Man">Salarry Man</option>
                         <option value="Investor">Investor</option>
                     </select>
-                    <label for="floatingSelect">Select Your Job</label>
+                    <label for="jobRegis">Select Your Job</label>
                 </div>
-                <div class="mb-2">
-                    <label for="" class="form-label regis">Create Username</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="usernameRegis" placeholder="yourUsername29" required oninvalid="this.setCustomValidity('Woi, PASSWORD ISI DULU')" oninput="this.setCustomValidity('')">
+                <div class="mb-2" id="usernameRegisContainer">
+                    <label for="usernameRegis" class="form-label regis">Create Username</label>
+                    <input type="text" class="form-control" id="usernameRegis" name="usernameRegis" placeholder="yourUsername29" required oninvalid="this.setCustomValidity('Woi, PASSWORD ISI DULU')" oninput="this.setCustomValidity('')">
                 </div>
-                <label for="" class="form-label regis">Create Password</label>
-                <div class="input-group mb-3">
+                <label for="inputPassword" class="form-label regis">Create Password</label>
+                <div class="input-group mb-3" id="passwordRegisContainer">
                     <input type="password" class="form-control" id="inputPassword" placeholder="password" name="passwordRegis" required>
                     <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                         <i class="bi bi-eye-slash" id="toggleIcon"></i>
