@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "homenaje", "caveat", "segoe ui", "poppins";
 }
 body {
 	font-family: "Poppins", sans-serif;
@@ -12,16 +13,20 @@ body {
 }
 .homenaje-regular {
 	font-family: "Homenaje", sans-serif;
-	font-weight: 200;
+	font-weight: 100;
 	font-style: normal;
 }
 .alerta-container {
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	.alert {
+		padding: 15px 20px 10px 25px;
+	}
 	.alerta {
-		width: 90%;
-		border-radius: 20px;
+		margin-top: 10px;
+		width: 80%;
+		border-radius: 15px;
 		z-index: 3;
 		position: absolute;
 	}
@@ -29,13 +34,14 @@ body {
 // Default Header Section
 .dashboard-header {
 	width: 100%;
-	height: 24%;
+	height: 22%;
 	overflow-x: hidden;
 	color: #fff;
 	font-family: "Homenaje", sans-serif;
 	// Default Header
 	.container-header {
-		position: relative;
+		width: 100%;
+		position: fixed;
 		padding: 15px 50px;
 		max-height: 60%;
 		display: flex;
@@ -77,10 +83,12 @@ body {
 	}
 	// Default NavBar
 	.navbar-tabs {
-		position: relative;
-		z-index: 11;
+		position: fixed;
 		width: 100%;
-		padding: 0 50px;
+		z-index: 11;
+		// Ini Buat Ngatur Kebawahan Navbar Tabs Verry Important
+		margin-top: 80px;
+		padding: 0px 50px;
 		display: flex;
 		justify-content: start;
 		gap: 20px;
@@ -126,7 +134,7 @@ body {
 	flex-direction: column;
 	// Buat Halaman Registration
 	&.regis {
-		margin-top: 40px;
+		margin-top: 90px;
 	}
 	.form-wrapper {
 		display: flex;

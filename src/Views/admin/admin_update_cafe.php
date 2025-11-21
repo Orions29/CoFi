@@ -1,3 +1,3 @@
 <div class="main-container">
-    <h1>User Dashboard</h1>
+    <h1>Update Cafe</h1>
 </div>

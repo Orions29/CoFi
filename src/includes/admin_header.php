@@ -1,8 +1,6 @@
-<?php
-$pageTitle = "Laman Admin";
-?>
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,storefront,supervised_user_circle" />
+<!-- Khusus Admin -->
+<link rel="stylesheet" href="/assets/styles/admin/styles_admin.css">
 <header class="dashboard-header">
     <div class="container-header">
         <div class="page-title">
@@ -31,28 +29,28 @@ $pageTitle = "Laman Admin";
         </div>
     </div>
     <nav class="navbar-tabs">
-        <a href="#">
+        <a href="/dashboard">
             <div class="navbar-tab" id="navbar-dashboard">
                 <span class="material-symbols-outlined">
                     dashboard
                 </span>Dashboard
             </div>
         </a>
-        <a href="#">
+        <a href="/admin/usermanage">
             <div class="navbar-tab" id="navbar-user-manage">
                 <span class="material-symbols-outlined">
                     supervised_user_circle
                 </span>User Manage
             </div>
         </a>
-        <a href="#">
+        <a href="/cafe/add">
             <div class="navbar-tab" id="navbar-add-cafe">
                 <span class="material-symbols-outlined">
                     storefront
                 </span>Add Cafe
             </div>
         </a>
-        <a href="#">
+        <a href="/cafe/update">
             <div class="navbar-tab" id="navbar-update-cafe">
                 <span class="material-symbols-outlined">
                     edit

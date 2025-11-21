@@ -1,23 +1,47 @@
 <?php
 // Alert Section
-foreach ($_SESSION['alert'] as $alerta):
+if (isset($_SESSION['alert'])):
+    foreach ($_SESSION['alert'] as $alerta):
 ?>
-    <div class="alerta-container">
-        <div class="alert alert-danger alerta" role="alert">
-            <strong>
-                <?php
-                echo $alerta['type']
-                ?>
-            </strong>
-            <p>
-                <?php
-                echo $alerta['message']
-                ?>
-            </p>
+        <div class="alerta-container">
+            <div class="alert alert-danger alert-dismissible fade show alerta" role="alert">
+                <strong>
+                    <?php
+                    echo htmlspecialchars($alerta['type']);
+                    ?>
+                </strong>
+                <p>
+                    <?php
+                    echo htmlspecialchars($alerta['message']);
+                    ?>
+                </p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         </div>
-    </div>
-<?php
-endforeach;
+    <?php
+    endforeach;
+endif;
 unset($_SESSION['alert']);
-// Kodemu Disini 
+if (isset($_SESSION['alert_success'])):
+    foreach ($_SESSION['alert_success'] as $alerta):
+    ?>
+        <div class="alerta-container">
+            <div class="alert alert-success alert-dismissible fade show alerta alerta" role="alert">
+                <strong>
+                    <?php
+                    echo $alerta['type']
+                    ?>
+                </strong>
+                <p>
+                    <?php
+                    echo $alerta['message']
+                    ?>
+                </p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+<?php
+    endforeach;
+endif;
+unset($_SESSION['alert_success']);
 ?>

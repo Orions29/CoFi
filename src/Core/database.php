@@ -9,3 +9,5 @@ try {
     ];
     error_log("SQLConnector - " . $th . ' ' . date('d-m-Y H:i:s'));
 }
+
+// $sqlConn->close();
