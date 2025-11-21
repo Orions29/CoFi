@@ -1,11 +1,11 @@
 <?php
 // Salting Procedure
 ?>
-<div class="main-container cafe-editor">
-    <div class="edit-cafe-wrapper">
-        <h1 class="homenaje-regular">Add Cafe</h1>
+<div class="main-container cafe-editor d-flex">
+    <div class="form-container" id="edit-cafe-wrapper">
+        <h1 class="homenaje-regular form-title">Add Cafe</h1>
         <form action="/" method="post">
-            <div class="cafe-form-wrapper">
+            <div class="main-form-wrapper cafe-form-wrapper">
                 <div class="left-wrapper wrapper">
                     <input type="hidden" name="action" value="add_cafe">
                     <input type="hidden" name="" value="">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="cafe-rating mb-3" id="ratingContainerAdd">
                         <label for="fullNameRegis" class="form-label regis">Rating</label>
-                        <input type="number" step="500" class="form-control" id="ratingCafeAdd" name="ratingCafe" placeholder="0" required ">
+                        <input type="number" step="0.1" class="form-control" id="ratingCafeAdd" name="ratingCafe" placeholder="0" required ">
                     </div>
                     
                     <div class=" mb-2" id="categoryCafeContainer">

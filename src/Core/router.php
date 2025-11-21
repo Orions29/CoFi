@@ -13,6 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         case 'add_cafe_attempt':
             require __DIR__ . "/../Process/handler_add_cafe.php";
             break;
+        case 'delete_user':
+            require __DIR__ . "/../Process/admin_handler_userManage.php";
+            break;
+        // Buat Inject User FIktif
+        // case 'dummy_dump':
+        //     require __DIR__ . "/../Process/dummyData.php";
+        //     break;
         default:
             break;
     }
@@ -57,6 +64,11 @@ $routes = [
     'admin/usermanage' => [
         'file' => 'admin_usermanage',
         'title' => 'ADMIN | User Management',
+        'auth' => 'admin'
+    ],
+    'admin/usermanage/update' => [
+        'file' => 'admin_usermanage_update',
+        'title' => 'ADMIN | Update User',
         'auth' => 'admin'
     ],
     'cafe/add' => [

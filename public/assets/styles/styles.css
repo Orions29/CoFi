@@ -15,7 +15,7 @@ body {
 
 .homenaje-regular {
   font-family: "Homenaje", sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -24,9 +24,13 @@ body {
   justify-content: center;
   width: 100%;
 }
+.alerta-container .alert {
+  padding: 15px 20px 10px 25px;
+}
 .alerta-container .alerta {
-  width: 90%;
-  border-radius: 20px;
+  margin-top: 10px;
+  width: 80%;
+  border-radius: 15px;
   z-index: 3;
   position: absolute;
 }
@@ -131,7 +135,7 @@ body {
   flex-direction: column;
 }
 .form-contents-wrapper.regis {
-  margin-top: 40px;
+  margin-top: 90px;
 }
 .form-contents-wrapper .form-wrapper {
   display: flex;

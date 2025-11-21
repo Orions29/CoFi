@@ -23,6 +23,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'login_attempt') {
                     $_SESSION['username'] = $rows_selectLoginUser['username'];
                     // Pengendali admin atau user
                     $_SESSION['user_role'] = ($rows_selectLoginUser['admin_stat'] == 1) ? 'admin' : 'user';
+                    // Close Jan Lup
+                    $stmt_selectLoginUser->close();
+                    $sqlConn->close();
                     // Kalau Bener Logged In
                     header("Location: /");
                     exit();

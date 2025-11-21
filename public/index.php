@@ -34,9 +34,7 @@ require __DIR__ . "/../src/Core/init.php";
         include $includesDir . "/header.php";
     }
     // kalau Ada Alert
-    if (isset($_SESSION['alert'])) {
-        include $includesDir . "/alert.php";
-    }
+    include $includesDir . "/alert.php";
     // Buat Debugging
 
     // Nampilin Konten di Views
