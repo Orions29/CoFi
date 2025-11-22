@@ -31,7 +31,7 @@ unset($_SESSION['regis_token']);
                 <input type="hidden" name="action" value="login_attempt">
                 <input type="hidden" name="login_token_attempt" value="<?= $_SESSION['login_token'] ?>">
                 <div class="mb-3">
-                    <label for="" class="form-label">Username / Email</label>
+                    <label for="" class="form-label">Username</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usernameLogin" placeholder="coffeMaser29" required>
                 </div>
                 <div class="mb-3">

@@ -1,10 +1,10 @@
-# CaFi
+# CoFi
 
 Lightweight PHP web project for managing a cafe website (admin & public front-end).
 
 ## About
 
-This repository contains the code for the `CaFi` project. It uses plain PHP with Composer-managed dependencies and a small project structure inside `src/` and `public/` for the served site.
+This repository contains the code for the `CoFi` project. It uses plain PHP with Composer-managed dependencies and a small project structure inside `src/` and `public/` for the served site.
 
 ## Requirements
 
@@ -90,6 +90,7 @@ This repository does not include an automated test suite. Add tests and CI as ne
 No license file found in the repository. Add a `LICENSE` file if you want to make the project's license explicit.
 
 ---
+
 If you'd like, I can:
 
 - add badges (build / license),

@@ -79,7 +79,7 @@ $sqlConn->close();
                     <?php
                     foreach ($userRows as $row):
                     ?>
-                        <tr style="background-color:<?= ($row['admin_stat'] == true) ? '#B7E5CD' : '#f7f1de' ?> ;">
+                        <tr style="background-color:<?= ($row['admin_stat']) ? '#b7e5cd85' : '#f7f1de' ?> ;">
                             <td>
                                 <?php
                                 echo $row['user_id'];
@@ -88,6 +88,7 @@ $sqlConn->close();
                             <td>
                                 <?php
                                 echo $row['username'];
+                                echo $row['username'] == $_SESSION['username'] ? " <span style='font-size: 15px; margin-left:4px;'> (it's You) </span>" : "";
                                 ?>
                             </td>
                             <td>

@@ -1,31 +1,50 @@
 <?php
 // Salting Procedure
+$loginSalt = $_ENV['ADD_CAFE_SALT'];
+$_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
 ?>
 <div class="main-container cafe-editor d-flex">
     <div class="form-container" id="edit-cafe-wrapper">
         <h1 class="homenaje-regular form-title">Add Cafe</h1>
-        <form action="/" method="post">
+        <form action="/cafe/add" method="post" enctype="multipart/form-data">
+            <!-- Token Adding -->
+            <input type="hidden" name="add_cafe_token_attempt" value="<?= $_SESSION['add_cafe_token'] ?>">
+            <input type="hidden" name="action" value="add_cafe_attempt">
             <div class="main-form-wrapper cafe-form-wrapper">
                 <div class="left-wrapper wrapper">
-                    <input type="hidden" name="action" value="add_cafe">
-                    <input type="hidden" name="" value="">
                     <div class="mb-2" id="cafeNameContainer">
                         <label for="cafeEmail" class="form-label regis">Cafe Email</label>
                         <input type="email" class="form-control" aria-describedby="emailHelp" id="userEmailRegis" name="cafeEmailAdd" placeholder="yourCafe@maker" required>
                     </div>
                     <div class="cafe-name mb-2" id="namaCafeContainer">
                         <label for="fullNameRegis" class="form-label regis">Nama Cafe</label>
-                        <input type="text" class="form-control" id="namaCafeAdd" name="namaCafe" placeholder="Coffe Maker" required oninvalid="this.setCustomValidity('Woi, namanya')" oninput="this.setCustomValidity('')">
+                        <input type="text" class="form-control" id="namaCafeAdd" name="namaCafeAdd" placeholder="Coffe Maker" required oninvalid="this.setCustomValidity('Woi, namanya')" oninput="this.setCustomValidity('')">
                     </div>
-                    <div class="cafe-name mb-2" id="koordinatCafeContainer">
-                        <label for="fullNameRegis" class="form-label regis">Alamat Cafe (url)</label>
-                        <input type="url" class=" form-control" id="namaCafeAdd" name="namaCafe" placeholder="Coffe Maker" required oninvalid="this.setCustomValidity('Woi, Alamatnya dimana???')" oninput="this.setCustomValidity('')">
+                    <div class="d-flex justify-content-between gap-3">
+                        <div class="w-50"> <label for="cafeLongitude" class="form-label regis">Longitude</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Long</span>
+                                <input type="number" step="any" class="form-control"
+                                    id="cafeLongitude" name="longitudeAdd"
+                                    placeholder="110.xxxx" required>
+                            </div>
+                        </div>
+                        <div class="w-50">
+                            <label for="cafeLatitude" class="form-label regis">Latitude</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Lat</span>
+                                <input type="number" step="any" class="form-control"
+                                    id="cafeLatitude" name="latitudeAdd"
+                                    placeholder="-7.xxxx" required>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="cafe-rating mb-3" id="ratingContainerAdd">
-                        <label for="fullNameRegis" class="form-label regis">Rating</label>
-                        <input type="number" step="0.1" class="form-control" id="ratingCafeAdd" name="ratingCafe" placeholder="0" required ">
+                    <div class=" cafe-rating mb-3" id="ratingContainerAdd">
+                        <label for="ratingCafeAdd" class="form-label regis">Rating</label>
+                        <input type="number" step="0.1" class="form-control" id="ratingCafeAdd" name="ratingCafeAdd" placeholder="0" required ">
                     </div>
-                    
+        
                     <div class=" mb-2" id="categoryCafeContainer">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle kategori"
@@ -93,35 +112,35 @@
                 <div class="right-wrapper wrapper">
                     <div class="mb-3">
                         <label for="formFileMultiple" class="form-label">Gambar Suasana Cafe</label>
-                        <input class="form-control" type="file" id="multipleCafePicture" name="cafePicture" multiple>
+                        <input class="form-control" type="file" id="multipleCafePicture" name="cafePicture[]" multiple>
                     </div>
                     <div class=" price-wrapper d-flex justify-content-between">
                         <div class="max-price-container price-container ">
                             <label for="fullNameRegis" class="form-label regis">Max Pricing</label>
                             <div class="input-group cafe-rating mb-3" id="maxPriceContainer">
                                 <span class="input-group-text" id="basic-addon1">Rp</span>
-                                <input type="number" step="500" class="form-control" id="maxPrice" name="ratingCafe" placeholder="0" required ">
+                                <input type="number" step="500" class="form-control" id="maxPrice" name="maxPriceAdd" placeholder="0" required ">
                             </div>
                         </div>
                         <div class=" min-price-container price-container">
                                 <label for="fullNameRegis" class="form-label regis">Min Pricing</label>
                                 <div class="input-group cafe-rating mb-3" id="minPriceContainer">
                                     <span class="input-group-text" id="basic-addon1">Rp</span>
-                                    <input type="number" step="500" class="form-control" id="minPrice" name="ratingCafe" placeholder="0" required ">
+                                    <input type="number" step="500" class="form-control" id="minPrice" name="minPriceAdd" placeholder="0" required ">
                                 </div>
                         </div>
                         <div class=" avg-price-container price-container">
                                     <label for="fullNameRegis" class="form-label regis">Average Pricing</label>
                                     <div class="input-group cafe-rating mb-3" id="avgPriceContainer">
                                         <span class="input-group-text" id="basic-addon1">Rp</span>
-                                        <input type="number" step="500" max="5" class="form-control" id="avgPrice" name="ratingCafe" placeholder="0" required ">
+                                        <input type="number" step="500" class="form-control" id="avgPrice" name="avgPriceAdd" placeholder="0" required ">
                                     </div>
                         </div>
                     </div>
                                     <div class=" mb-3">
                                         <label for="cafeDescription" class="form-label">Cafe Description</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            name="cafeDescription" placeholder="Cafe Deskription Here"></textarea>
+                                            name="cafeDescriptionAdd" placeholder="Cafe Deskription Here"></textarea>
                                     </div>
                                 </div>
                             </div>

@@ -2,12 +2,20 @@
 $pageTitle = "Laman User";
 ?>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,storefront,supervised_user_circle" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=coffee,dashboard,edit,map_search,storefront,supervised_user_circle" />
+<!-- Buat MAPBOX -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css' rel='stylesheet' />
 <header class="dashboard-header">
     <div class="container-header">
-        <div class="page-title">
-            <h1>User Page</h1>
-        </div>
+        <a href="/dashboard" style="color: white; text-decoration:none;">
+            <div class="page-title">
+                <span class="material-symbols-outlined" style="font-size: 3rem;">
+                    map_search
+                </span>
+                <h1>The Map</h1>
+            </div>
+        </a>
         <div class="hero-logo">
             <svg class="hero-logo-icons" viewBox="0 0 138 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="CoFi Logo">
@@ -30,33 +38,19 @@ $pageTitle = "Laman User";
                                             ?></a>
         </div>
     </div>
-    <nav class="navbar-tabs">
-        <a href="#">
+    <nav class="navbar-tabs user">
+        <a href="/calagoue">
             <div class="navbar-tab" id="navbar-dashboard">
                 <span class="material-symbols-outlined">
                     dashboard
-                </span>Dashboard
-            </div>
-        </a>
-        <a href="#">
-            <div class="navbar-tab" id="navbar-user-manage">
-                <span class="material-symbols-outlined">
-                    supervised_user_circle
-                </span>User Manage
-            </div>
-        </a>
-        <a href="#">
-            <div class="navbar-tab" id="navbar-add-cafe">
-                <span class="material-symbols-outlined">
-                    storefront
-                </span>Add Cafe
+                </span>Catalouge
             </div>
         </a>
         <a href="#">
             <div class="navbar-tab" id="navbar-update-cafe">
                 <span class="material-symbols-outlined">
                     edit
-                </span>Update Cafe
+                </span> Coming Soon
             </div>
         </a>
     </nav>
