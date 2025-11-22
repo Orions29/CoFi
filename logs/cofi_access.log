@@ -2937,3 +2937,7 @@
 127.0.0.1 - - [21/Nov/2025:10:14:31 +0700] "GET /assets/styles/admin/styles_admin.css HTTP/1.1" 200 3311
 127.0.0.1 - - [21/Nov/2025:10:14:31 +0700] "GET /assets/img/Cofi.png HTTP/1.1" 200 117885
 127.0.0.1 - - [21/Nov/2025:10:14:36 +0700] "GET /admin/usermanage HTTP/1.1" 200 35344
+127.0.0.1 - - [22/Nov/2025:07:38:50 +0700] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [22/Nov/2025:07:38:50 +0700] "GET /login HTTP/1.1" 200 4694
+127.0.0.1 - - [22/Nov/2025:07:38:50 +0700] "GET /assets/styles/styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Nov/2025:07:38:50 +0700] "GET /assets/js/script.js HTTP/1.1" 304 -

@@ -1,10 +1,12 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,storefront,supervised_user_circle" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,history,storefront,supervised_user_circle" />
 <!-- Khusus Admin -->
 <link rel="stylesheet" href="/assets/styles/admin/styles_admin.css">
 <header class="dashboard-header">
     <div class="container-header">
         <div class="page-title">
-            <h1>Admin Page</h1>
+            <a href="/admin/dashboard">
+                <h1>Admin Page</h1>
+            </a>
         </div>
         <div class="hero-logo">
             <svg class="hero-logo-icons" viewBox="0 0 138 62" fill="none" xmlns="http://www.w3.org/2000/svg">

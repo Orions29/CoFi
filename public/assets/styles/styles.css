@@ -59,6 +59,10 @@ body {
   display: flex;
   align-items: center;
 }
+.dashboard-header .container-header .page-title a {
+  text-decoration: none;
+  color: #fff;
+}
 .dashboard-header .container-header .page-title h1 {
   margin: 0;
   font-size: 2.5rem;
