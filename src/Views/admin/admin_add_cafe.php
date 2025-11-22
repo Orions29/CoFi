@@ -42,7 +42,7 @@ $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
                     </div>
                     <div class=" cafe-rating mb-3" id="ratingContainerAdd">
                         <label for="ratingCafeAdd" class="form-label regis">Rating</label>
-                        <input type="number" step="0.1" class="form-control" id="ratingCafeAdd" name="ratingCafe" placeholder="0" required ">
+                        <input type="number" step="0.1" class="form-control" id="ratingCafeAdd" name="ratingCafeAdd" placeholder="0" required ">
                     </div>
         
                     <div class=" mb-2" id="categoryCafeContainer">

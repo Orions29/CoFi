@@ -58,7 +58,7 @@
 }
 
 .cafe-recent-wrapper {
-  width: 75%;
+  width: 45%;
 }
 .cafe-recent-wrapper h2 {
   text-align: start;
@@ -197,6 +197,7 @@
   width: 90%;
 }
 .user-manage-table table {
+  padding-right: 4px;
   table-layout: fixed;
   width: 100%;
   font-size: 1.2rem;

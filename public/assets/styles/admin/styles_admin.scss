@@ -49,7 +49,7 @@ $f-hand: "Caveat", cursive;
 	display: flex;
 	gap: 25px;
 }
-
+// Pembungkus Counter Pada Dashboard
 .counter-wrapper {
 	width: 20%;
 	margin-top: 15px;
@@ -68,14 +68,15 @@ $f-hand: "Caveat", cursive;
 		border-radius: 8px;
 	}
 }
-
+// Pebungkus Recent Activity Cafe
 .cafe-recent-wrapper {
-	width: 75%;
+	width: 45%;
 	h2 {
 		text-align: start;
 		padding: 0px !important;
 		margin: 0px !important;
 	}
+	// Wrapper yang berisi seluruh recent Activity Cafe
 	.cafe-table-wrapper {
 		overflow-y: scroll;
 		height: 350px;
@@ -234,6 +235,7 @@ $f-hand: "Caveat", cursive;
 .user-manage-table {
 	width: 90%;
 	table {
+		padding-right: 4px;
 		table-layout: fixed;
 		width: 100%;
 		font-size: 1.2rem;

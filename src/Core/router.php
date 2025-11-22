@@ -56,6 +56,11 @@ $routes = [
         'title' => 'Dashboard',
         'auth' => 'user'
     ],
+    'cafe/details' => [
+        'file' => 'admin_add_cafe',
+        'title' => 'ADMIN | Tambah Cafe',
+        'auth' => 'user'
+    ],
     'admin/dashboard' => [
         'file' => 'admin_dashboard',
         'title' => 'ADMIN | Dashboard',
