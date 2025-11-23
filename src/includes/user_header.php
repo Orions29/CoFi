@@ -2,10 +2,9 @@
 $pageTitle = "Laman User";
 ?>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=coffee,dashboard,edit,map_search,storefront,supervised_user_circle" />
-<!-- Buat MAPBOX -->
-<script src='https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,edit,storefront,supervised_user_circle" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0;wght@400;GRAD@0;opsz@24" />
+
 <header class="dashboard-header">
     <div class="container-header">
         <a href="/dashboard" style="color: white; text-decoration:none;">

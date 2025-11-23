@@ -16,6 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         case 'delete_user':
             require __DIR__ . "/../Process/admin_handler_userManage.php";
             break;
+        case 'update_cafe_attempt':
+            require __DIR__ . "/../Process/handler_update_cafe.php";
+            break;
+        case 'delete_cafe_attempt':
+            require __DIR__ . "/../Process/handler_delete_cafe.php";
+            break;
         // Buat Inject User FIktif
         // case 'dummy_dump':
         //     require __DIR__ . "/../Process/dummyData.php";
