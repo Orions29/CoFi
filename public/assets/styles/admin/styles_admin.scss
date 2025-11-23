@@ -6,6 +6,7 @@ $c-social: #fcb53b;
 $c-white: #fff;
 
 $f-display: "homenaje", sans-serif;
+$f-sans: "Segoe Ui";
 $f-hand: "Caveat", cursive;
 
 // Buat yang sering kepake
@@ -109,7 +110,11 @@ $f-hand: "Caveat", cursive;
 		font-size: 2.6rem;
 		text-align: center;
 	}
-
+	.cafe-description {
+		.form-control {
+			font-family: $f-sans !important;
+		}
+	}
 	// Flattened wrapper
 	.main-form-wrapper {
 		padding: 0 21px;
@@ -214,7 +219,6 @@ $f-hand: "Caveat", cursive;
 		font-size: 1.3rem;
 		margin-right: 10px;
 	}
-
 	input.form-control {
 		font-size: 1.2rem;
 		flex-grow: 1;
