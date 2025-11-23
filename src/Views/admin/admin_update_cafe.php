@@ -29,6 +29,16 @@ function renderCoffeeRating($rating, $max = 5) {
     $html .= "</div>";
     return $html;
 }
+
+$icons = [
+    "productivity"      => "💻",
+    "social space"      => "👥",
+    "roastery"          => "☕",
+    "live music"        => "🎵",
+    "outdoor seating"   => "🌿",
+    "pet friendly"      => "🐾"
+];
+
 ?>
 
 <div class="page-container">
@@ -128,7 +138,14 @@ function renderCoffeeRating($rating, $max = 5) {
             <?php if (!empty($kategori)): ?>
             <div class="cafe-categories">
                 <?php foreach ($kategori as $k): ?>
-                    <span class="cat-badge"><?= htmlspecialchars($k) ?></span>
+                    <?php 
+                        // convert category name → class-friendly
+                        $class = "cat-" . str_replace(" ", "-", strtolower($k)); 
+                    ?>
+                    <span class="cat-badge <?= $class ?>">
+                        <span class="cat-icon"><?= $icons[strtolower($k)] ?? "•" ?></span>
+                        <?= htmlspecialchars($k) ?>
+                    </span>
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>
