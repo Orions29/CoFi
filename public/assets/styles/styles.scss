@@ -190,6 +190,7 @@ body {
 			align-items: center;
 			width: 15%;
 			a {
+				line-height: 30px;
 				text-align: right;
 				width: 100%;
 				color: #fff;
@@ -197,6 +198,11 @@ body {
 				font-size: 1.5rem;
 				margin: 0;
 			}
+		}
+		// Header Admin dan Header User
+		.admin-greet,
+		.container-header {
+			max-width: 11%;
 		}
 	}
 }
@@ -206,14 +212,14 @@ body {
 	width: 100%;
 	z-index: 11;
 	// Ini Buat Ngatur Kebawahan Navbar Tabs Verry Important
-	margin-top: 80px;
+	margin-top: 85px;
 	padding: 0px 50px;
 	display: flex;
 	justify-content: start;
 	gap: 20px;
 	&.user {
 		justify-content: center;
-		padding-right: 100px;
+		// padding-right: 100px;
 	}
 	a {
 		text-decoration: none;
