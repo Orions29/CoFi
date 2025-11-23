@@ -1,7 +1,6 @@
 /.vscode
 /archive
 .env
-/logs
 /public/uploads/*
 !/public/uploads/.gitkeep
 !/public/uploads/cafe_image/.gitkeep
