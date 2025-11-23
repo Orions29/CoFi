@@ -436,12 +436,12 @@
 
 .coffee-active {
     color: #c68b4b;   
-    font-size: 24px;
+    font-size: 35px;
 }
 
 .coffee-inactive {
     color: #e3e3e3;   
-    font-size: 24px;
+    font-size: 35px;
 }
 
 .price {
@@ -458,12 +458,50 @@ cafe-categories {
 }
 
 .cat-badge {
-    background-color: #c97847;
-    color: white;
+    /* background-color: #c97847;
+    color: white; */
+    font-family: 'Caveat', sans-serif !important;
     padding: 6px 14px;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 25px;
-    font-weight: 600;
-    display: inline-block;
+    font-weight: 300;
+    display: inline-flex;
     letter-spacing: 2px;
+    color: white;
+}
+
+.cat-icon {
+    font-size: 20px;
+    /* line-height: 0; */
+}
+
+
+.cat-productivity {
+    background-color: #84994f; 
+    color: white;
+}
+
+.cat-social-space {
+    background-color: #fcb53b; 
+    color: white;
+}
+
+.cat-roastery {
+    background-color: #a72703; 
+    color: white;
+}
+
+.cat-live-music {
+    background-color: #6729da; 
+    color: white;
+}
+
+.cat-outdoor-seating {
+    background-color: #e10c81; 
+    color: white;
+}
+
+.cat-pet-friendly {
+    background-color: #f68e4d; 
+    color: white;
 }
