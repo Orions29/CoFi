@@ -1,4 +1,6 @@
 <?php
+// NOTE - FIle Ini Buat Nginjek Data Dummy yang cepet Ke Database
+
 require_once __DIR__ . "/../Core/database.php";
 
 // Aturannya Gini kalau mau pake maka pastikan semua data ini sudah kedelete semua
@@ -92,7 +94,7 @@ echo "<h2>Injecting Dummy Data</h2>";
 $sqlConn->begin_transaction();
 
 try {
-    // Prepare Statement Sekali Aja Biar Kenceng
+
     $stmtUser = $sqlConn->prepare("INSERT INTO USERS (USERNAME, USER_PASSWORD, USER_EMAIL) VALUES (?,?,?)");
     $stmtDetail = $sqlConn->prepare("INSERT INTO USER_DETAILS (USER_BIRTHDAY, USER_FULL_NAME, JOB, USER_ID) VALUES (?,?,?,?)");
 

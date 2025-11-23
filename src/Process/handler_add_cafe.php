@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         if (isset($stmtCat) && $stmtCat) $stmtCat->close();
         if (isset($stmtPhoto) && $stmtPhoto) $stmtPhoto->close();
 
-        // Selalu TUtup 
+        // Selalu TUtup WAJIB
         if (isset($sqlConn) && $sqlConn) $sqlConn->close();
     }
 } else {

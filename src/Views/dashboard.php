@@ -72,7 +72,7 @@
                 cafe.categories.forEach(cat => {
                     const span = document.createElement('span');
                     let slug = cat.toLowerCase().trim().replace(/\s+/g, '-');
-                    span.className = `badge cat-${slug}`;
+                    span.className = `badge map-cafe-detail cat-${slug}`;
                     span.innerText = cat;
                     span.style.marginRight = '4px';
                     catContainer.appendChild(span);
