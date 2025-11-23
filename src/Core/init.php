@@ -12,8 +12,3 @@ session_start();
 
 // Ngambil Router
 require __DIR__ . "/router.php";
-
-// Buat Debugging 
-// Buat Nge Verif Auth nya
-// $_SESSION['user_role'] = 'admin';
-// $_SESSION['is_logged_in'] = false;

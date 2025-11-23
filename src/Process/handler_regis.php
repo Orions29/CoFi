@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../Core/database.php";
 
+// Querry Nambahin Users dan User_details
 $insertNewUser = "INSERT INTO USERS 
                  (USERNAME ,USER_PASSWORD ,USER_EMAIL) VALUES (?,?,?)";
 $insertNewUserDetails = "INSERT INTO USER_DETAILS 
@@ -24,8 +25,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'regis_attempt') {
     }
     $stmt_selectUsers->close();
 
-    if (hash_equals($_POST['regis_token_attempt'] ?? '', $_SESSION['regis_token'] ?? '')) { // Pake null coalescing biar gak warning
-
+    if (hash_equals($_POST['regis_token_attempt'] ?? '', $_SESSION['regis_token'] ?? '')) {
+        // Mulai Eksekusi Querry
         $sqlConn->begin_transaction();
 
         try {
@@ -36,7 +37,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'regis_attempt') {
             $stmt_insertNewUser->execute();
             $stmt_insertNewUser->close();
 
-            // Ambil ID terakhir
+            // Ambil ID terakhir dari Eksekusi sebelumnya 
             $last_insert_id = $sqlConn->insert_id;
 
             // Insert Details
@@ -45,8 +46,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'regis_attempt') {
             $stmt_insertNewUserDetails->execute();
             $stmt_insertNewUserDetails->close();
 
+            // kalau gaada Problemo harusnya langsung bisa di commit
             $sqlConn->commit();
-
+            // Throw Alert Success
             $_SESSION['alert_success'][] = [
                 'type' => 'Registration Complete',
                 'message' => 'Akun berhasil dibuat!'
@@ -74,10 +76,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'regis_attempt') {
         exit();
     }
 } else {
+    // NOTE - Kalau action bisa dirubah sus banget ini
     $_SESSION['alert'][] = [
         'type' => 'ngapain_ini',
         'message' => 'Iso Mbobol Post cah!!'
     ];
+    error_log("HTTPS_POST_Violation - " . __DIR__ . date('d-m-Y H:i:s'));
     header("Location: /register");
     exit();
 }

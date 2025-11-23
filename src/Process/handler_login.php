@@ -62,6 +62,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'login_attempt') {
 // Section Wajib di dsetiap Handler
 // Ngeredirect ke Dashboard
 
-// Harusnya ga sampe sini
+// NOTE - Harusnya ga sampe sini
 header("Location: /login");
 exit();
