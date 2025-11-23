@@ -38,6 +38,71 @@ body {
   font-style: normal;
 }
 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: #f7f1de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+#preloader.loaded {
+  transform: translateY(-100%);
+}
+#preloader .loader-content {
+  text-align: center;
+  color: #c1785a;
+}
+#preloader .loader-content .preloader-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+#preloader .loader-content .preloader-header.regis {
+  margin-bottom: 20px;
+}
+#preloader .loader-content .preloader-header .logo-form {
+  width: 70%;
+  height: auto;
+  fill: #c1785a;
+}
+#preloader .loader-content .preloader-header .logo-form.register {
+  width: 30%;
+  height: auto;
+}
+#preloader .loader-content h2 {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+#preloader .loader-content #load-percent {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c1785a;
+  margin-bottom: 15px;
+}
+#preloader .loader-content .loading-bar-container {
+  width: 200px;
+  height: 6px;
+  background: rgba(193, 120, 90, 0.2);
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+#preloader .loader-content .loading-bar-container .loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #c1785a;
+  border-radius: 10px;
+  transition: width 0.3s ease-out;
+}
+
 .alerta-container {
   display: flex;
   justify-content: center;
@@ -100,6 +165,7 @@ body {
   width: 15%;
 }
 .dashboard-header .container-header .admin-greet a {
+  line-height: 30px;
   text-align: right;
   width: 100%;
   color: #fff;
@@ -107,12 +173,16 @@ body {
   font-size: 1.5rem;
   margin: 0;
 }
+.dashboard-header .container-header .admin-greet,
+.dashboard-header .container-header .container-header {
+  max-width: 11%;
+}
 
 .navbar-tabs {
   position: fixed;
   width: 100%;
   z-index: 11;
-  margin-top: 80px;
+  margin-top: 85px;
   padding: 0px 50px;
   display: flex;
   justify-content: start;
@@ -120,7 +190,6 @@ body {
 }
 .navbar-tabs.user {
   justify-content: center;
-  padding-right: 100px;
 }
 .navbar-tabs a {
   text-decoration: none;
@@ -131,7 +200,7 @@ body {
   width: 180px;
   height: 65px;
   display: flex;
-  padding: 30px 10px 10px 10px;
+  padding: 35px 10px 10px 10px;
   justify-content: center;
   align-items: center;
   border-radius: 0 0 20px 20px;
