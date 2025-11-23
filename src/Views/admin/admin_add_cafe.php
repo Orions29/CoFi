@@ -137,10 +137,15 @@ $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
                                     </div>
                         </div>
                     </div>
-                                    <div class=" mb-3">
+                    <div class=" mb-3 cafe-description">
                                         <label for="cafeDescription" class="form-label">Cafe Description</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            name="cafeDescriptionAdd" placeholder="Cafe Deskription Here"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"
+                                            name="cafeDescriptionAdd" placeholder="Cafe Deskription Here"><?php
+                                                                                                            $templateDescCafe = __DIR__ . "/template_deskripsi.txt";
+                                                                                                            $content  = file_get_contents($templateDescCafe);
+                                                                                                            echo $content;
+                                                                                                            ?>
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
