@@ -1,6 +1,6 @@
 <?php
 // Salting Procedure
-$loginSalt = $_ENV['ADD_CAFE_SALT'];
+$loginSalt = $_ENV['ADD_CAFE_SALT'] ?? null;
 $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
 ?>
 <div class="main-container cafe-editor d-flex">
