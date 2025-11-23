@@ -1,6 +1,14 @@
 /.vscode
 /archive
 .env
+
+# LOGS CONFIG
+/logs/*
+!/logs/cofi_error.log
+!/logs/cofi_access.log
+!/logs/.gitkeep
+
+# UPLOADS CONFIG
 /public/uploads/*
 !/public/uploads/.gitkeep
 !/public/uploads/cafe_image/.gitkeep
