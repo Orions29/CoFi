@@ -4,8 +4,7 @@
 
 # LOGS CONFIG
 /logs/*
-!/logs/cofi_error.log
-!/logs/cofi_access.log
+!/logs/*.example
 !/logs/.gitkeep
 
 # UPLOADS CONFIG
