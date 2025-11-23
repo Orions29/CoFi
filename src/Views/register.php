@@ -79,3 +79,43 @@ unset($_SESSION['login_token']);
         </div>
     </div>
 </div>
+<script defer>
+    // Ambil elemen-elemennya
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#inputPassword");
+    const icon = document.querySelector("#toggleIcon");
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Logic INI buat password toggle (yang sebelumnya error 'null')
+        const togglePassword = document.querySelector("#togglePassword");
+        if (togglePassword) {
+            togglePassword.addEventListener("click", function(e) {
+                // Ganti tipe inputnya
+                const type =
+                    password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
+
+                // Ganti ikon matanya
+                if (type === "password") {
+                    icon.classList.remove("bi-eye");
+                    icon.classList.add("bi-eye-slash");
+                } else {
+                    icon.classList.remove("bi-eye-slash");
+                    icon.classList.add("bi-eye");
+                }
+            });
+        }
+
+        // 2. Logic INI yang PALING PENTING buat Category Badge
+        document
+            .querySelectorAll("#categoryCafeContainer .form-check-input")
+            .forEach((checkbox) => {
+                // wajib
+                checkbox.addEventListener("change", updateSelectedCategories);
+            });
+
+        // 3. PANGGILAN AWAL (BIAR BADGE MUNCUL PAS PAGE LOAD)
+        // PASTIKAN BARIS INI ADA!
+        updateSelectedCategories();
+    });
+</script>

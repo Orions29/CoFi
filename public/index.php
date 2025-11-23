@@ -30,12 +30,10 @@ require __DIR__ . "/../src/Core/init.php";
     $noHeaderPages = ['404', 'login', 'register'];
     // Cek apakah user sudah login DAN halaman BUKAN halaman yang dikecualikan
     if ($isLoggedIn && !in_array($page, $noHeaderPages)) {
-        // Asumsi $includesDir sudah didefinisikan
         include $includesDir . "/header.php";
     }
     // kalau Ada Alert
     include $includesDir . "/alert.php";
-    // Buat Debugging
 
     // Nampilin Konten di Views
     include $viewFile;
