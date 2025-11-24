@@ -42,7 +42,7 @@ $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
                     </div>
                     <div class=" cafe-rating mb-3" id="ratingContainerAdd">
                         <label for="ratingCafeAdd" class="form-label regis">Rating</label>
-                        <input type="number" step="0.1" class="form-control" id="ratingCafeAdd" name="ratingCafe" placeholder="0" required ">
+                        <input type="number" step="0.1" class="form-control" id="ratingCafeAdd" name="ratingCafeAdd" placeholder="0" required ">
                     </div>
         
                     <div class=" mb-2" id="categoryCafeContainer">
@@ -137,10 +137,15 @@ $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
                                     </div>
                         </div>
                     </div>
-                                    <div class=" mb-3">
+                    <div class=" mb-3 cafe-description">
                                         <label for="cafeDescription" class="form-label">Cafe Description</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            name="cafeDescriptionAdd" placeholder="Cafe Deskription Here"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"
+                                            name="cafeDescriptionAdd" placeholder="Cafe Deskription Here"><?php
+                                                                                                            $templateDescCafe = __DIR__ . "/template_deskripsi.txt";
+                                                                                                            $content  = file_get_contents($templateDescCafe);
+                                                                                                            echo $content;
+                                                                                                            ?>
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -152,3 +157,60 @@ $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
         </form>
     </div>
 </div>
+<script defer>
+    function updateSelectedCategories() {
+        const selectedLabels = [];
+        const displayElement = document.getElementById("selectedCategoriesDisplay");
+        const checkboxes = document.querySelectorAll(
+            "#categoryCafeContainer .form-check-input"
+        );
+
+        // Bersihin Semua Badge
+        displayElement.innerHTML = "";
+
+        // Looping untuk mencari item yang dicentang
+        checkboxes.forEach((checkbox) => {
+            const labelText = checkbox.nextElementSibling.textContent.trim();
+            const checkboxId = checkbox.id; // Kita ambil ID untuk linking
+
+            if (checkbox.checked) {
+                // Buat HTML untuk Badge baru (Pill Look)
+                const badgeHtml = `
+				<span class="badge text-bg-secondary d-inline-flex align-items-center me-2 mt-1 ${checkboxId} " data-checkbox-id="${checkboxId}">
+					${labelText}
+					<button type="button" class="btn-close btn-close-white ms-2" aria-label="Remove ${labelText}"></button>
+				</span>
+			`;
+                // Masukkan badge baru ke display area
+                displayElement.insertAdjacentHTML("beforeend", badgeHtml);
+            }
+        });
+
+        // Pasang Listener ke Tombol Close yang BARU DIBUAT
+        // Kita harus pasang listener setiap kali badge dibuat
+        document
+            .querySelectorAll("#selectedCategoriesDisplay .btn-close")
+            .forEach((closeButton) => {
+                closeButton.addEventListener("click", function() {
+                    // Dapatkan ID checkbox asli dari attribute data-checkbox-id di tag <span>
+                    const badgeSpan = this.closest(".badge");
+                    const targetId = badgeSpan.dataset.checkboxId;
+
+                    // Uncheck checkbox aslinya
+                    const originalCheckbox = document.getElementById(targetId);
+                    if (originalCheckbox) {
+                        originalCheckbox.checked = false;
+
+                        // Trigger event 'change' agar fungsi updateSelectedCategories() berjalan lagi secara otomatis
+                        const event = new Event("change");
+                        originalCheckbox.dispatchEvent(event);
+                    }
+                });
+            });
+
+        // 4. Kasih pesan default kalau tidak ada yang terpilih
+        if (displayElement.innerHTML === "") {
+            displayElement.textContent = "Belum ada kategori terpilih.";
+        }
+    }
+</script>

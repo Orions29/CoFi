@@ -1,7 +1,13 @@
 /.vscode
 /archive
 .env
-/logs
+
+# LOGS CONFIG
+/logs/*
+!/logs/*.example
+!/logs/.gitkeep
+
+# UPLOADS CONFIG
 /public/uploads/*
 !/public/uploads/.gitkeep
 !/public/uploads/cafe_image/.gitkeep

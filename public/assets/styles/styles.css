@@ -2,7 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "homenaje", "caveat", "segoe ui", "poppins";
+  font-family: "homenaje", "caveat", "segoe ui";
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(247, 241, 222, 0.7529411765);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1785a;
+  border-radius: 10px;
+  border: 2px solid rgba(247, 241, 222, 0.7529411765);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(168.6343612335, 94.0264317181, 63.3656387665);
 }
 
 body {
@@ -17,6 +36,71 @@ body {
   font-family: "Homenaje", sans-serif;
   font-weight: 100;
   font-style: normal;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: #f7f1de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+#preloader.loaded {
+  transform: translateY(-100%);
+}
+#preloader .loader-content {
+  text-align: center;
+  color: #c1785a;
+}
+#preloader .loader-content .preloader-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+#preloader .loader-content .preloader-header.regis {
+  margin-bottom: 20px;
+}
+#preloader .loader-content .preloader-header .logo-form {
+  width: 70%;
+  height: auto;
+  fill: #c1785a;
+}
+#preloader .loader-content .preloader-header .logo-form.register {
+  width: 30%;
+  height: auto;
+}
+#preloader .loader-content h2 {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+#preloader .loader-content #load-percent {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c1785a;
+  margin-bottom: 15px;
+}
+#preloader .loader-content .loading-bar-container {
+  width: 200px;
+  height: 6px;
+  background: rgba(193, 120, 90, 0.2);
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+#preloader .loader-content .loading-bar-container .loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #c1785a;
+  border-radius: 10px;
+  transition: width 0.3s ease-out;
 }
 
 .alerta-container {
@@ -81,6 +165,7 @@ body {
   width: 15%;
 }
 .dashboard-header .container-header .admin-greet a {
+  line-height: 30px;
   text-align: right;
   width: 100%;
   color: #fff;
@@ -88,26 +173,34 @@ body {
   font-size: 1.5rem;
   margin: 0;
 }
-.dashboard-header .navbar-tabs {
+.dashboard-header .container-header .admin-greet,
+.dashboard-header .container-header .container-header {
+  max-width: 11%;
+}
+
+.navbar-tabs {
   position: fixed;
   width: 100%;
   z-index: 11;
-  margin-top: 80px;
+  margin-top: 85px;
   padding: 0px 50px;
   display: flex;
   justify-content: start;
   gap: 20px;
 }
-.dashboard-header .navbar-tabs a {
+.navbar-tabs.user {
+  justify-content: center;
+}
+.navbar-tabs a {
   text-decoration: none;
   color: #fff;
 }
-.dashboard-header .navbar-tabs .navbar-tab {
+.navbar-tabs .navbar-tab {
   margin-top: -15px;
   width: 180px;
   height: 65px;
   display: flex;
-  padding: 30px 10px 10px 10px;
+  padding: 35px 10px 10px 10px;
   justify-content: center;
   align-items: center;
   border-radius: 0 0 20px 20px;
@@ -117,15 +210,15 @@ body {
   font-size: 1.5rem;
   transition: 0.3s all ease;
 }
-.dashboard-header .navbar-tabs .navbar-tab span {
+.navbar-tabs .navbar-tab span {
   font-size: 2rem;
   padding-right: 10px;
 }
-.dashboard-header .navbar-tabs .navbar-tab:hover {
+.navbar-tabs .navbar-tab:hover {
   margin-top: -8px;
   background-color: #a8bba3;
 }
-.dashboard-header .navbar-tabs .navbar-tab:active {
+.navbar-tabs .navbar-tab:active {
   margin-top: 0px;
   box-shadow: none;
 }
@@ -239,4 +332,147 @@ body {
 }
 .form-contents-wrapper .form-wrapper .form-main-container .name-birth-container .birth-datepicker-regis {
   width: 35%;
+}
+
+/* Pastikan map punya tinggi! Kalau 0px gak bakal muncul */
+.themap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+}
+
+.mapboxgl-ctrl-top-right {
+  margin: 120px 20px 0px 0px;
+  right: 0;
+  top: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+  /* Full screen */
+}
+
+/* Style untuk Popup Mapbox */
+.mapboxgl-popup-content {
+  font-family: "homenaje";
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  min-width: 220px;
+  max-width: 250px;
+}
+
+.mapboxgl-popup-close-button {
+  color: white;
+  font-size: 24px;
+  top: 5px;
+  right: 8px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Card Wrapper */
+.popup-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gambar Cafe */
+.popup-img {
+  width: 100%;
+  height: 130px; /* WAJIB ADA TINGGI */
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+/* Info Container */
+.popup-info {
+  padding: 12px 10px;
+  background: #fff;
+}
+
+.popup-info h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.popup-rating {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f59e0b;
+  margin-bottom: 6px;
+}
+
+.btn-detail {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 6px 0;
+  background-color: #6f4e37;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-detail:hover {
+  background-color: #5a3e2b;
+  color: #fff;
+}
+
+.offcanvas-body {
+  background-color: #f7f1de;
+}
+.offcanvas-body .btn {
+  color: #fff !important;
+}
+.offcanvas-body p {
+  font-family: "Segoe Ui";
+}
+
+#btnFullDetail {
+  background-color: #305669;
+}
+#btnFullDetail:hover {
+  background-color: #485f6b;
+}
+
+#btnMaps {
+  background-color: #a8bba3;
+  border: none;
+}
+#btnMaps:hover {
+  background-color: #869482;
+}
+
+.badge.map-cafe-detail {
+  padding: 5px 7px !important;
+  font-size: 1.2rem !important;
+  font-family: "Caveat", cursive;
+  font-weight: 100 !important;
+  color: #fff !important;
+  background-color: #546168;
+}
+.badge.map-cafe-detail .btn-close {
+  width: 4px;
+  height: auto;
+}
+.badge.map-cafe-detail.cat-productivity {
+  background-color: #84994f !important;
+}
+.badge.map-cafe-detail.cat-social-space {
+  background-color: #fcb53b !important;
+}
+.badge.map-cafe-detail.cat-roastery {
+  background-color: #c1785a !important;
 }/*# sourceMappingURL=styles.css.map */

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Nov 2025 pada 06.35
+-- Waktu pembuatan: 22 Nov 2025 pada 16.11
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.4.14
 
@@ -31,12 +31,13 @@ CREATE TABLE `cafes` (
   `cafe_id` int(11) NOT NULL,
   `cafe_name` varchar(100) NOT NULL,
   `cafe_email` varchar(100) DEFAULT NULL,
-  `latitude` decimal(10,8) DEFAULT NULL,
-  `longitude` decimal(11,8) DEFAULT NULL,
+  `latitude` decimal(17,15) DEFAULT NULL,
+  `longitude` decimal(18,15) DEFAULT NULL,
   `cafe_description` text DEFAULT NULL,
   `price_min` decimal(10,2) DEFAULT NULL,
   `price_max` decimal(10,2) DEFAULT NULL,
   `price_avg` decimal(10,2) DEFAULT NULL,
+  `rating` decimal(2,1) DEFAULT 0.0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -44,8 +45,8 @@ CREATE TABLE `cafes` (
 -- Dumping data untuk tabel `cafes`
 --
 
-INSERT INTO `cafes` (`cafe_id`, `cafe_name`, `cafe_email`, `latitude`, `longitude`, `cafe_description`, `price_min`, `price_max`, `price_avg`, `created_at`) VALUES
-(8, 'Blanco Coffe and Book', 'inquiry@blancocoffee.id', -7.78140280, 110.36219490, 'Cafe Yang WEll Banget kalau kataku', 2000.00, 2500.00, 4000.00, '2025-11-22 05:46:40');
+INSERT INTO `cafes` (`cafe_id`, `cafe_name`, `cafe_email`, `latitude`, `longitude`, `cafe_description`, `price_min`, `price_max`, `price_avg`, `rating`, `created_at`) VALUES
+(14, 'Nyore Coffee & Space', 'nyore@cofi.cafe', -7.785205237626065, 110.366595105744650, 'Sangat Well Ini cafenya well banget', 8000.00, 7500.00, 8500.00, NULL, '2025-11-22 15:04:57');
 
 -- --------------------------------------------------------
 
@@ -64,11 +65,11 @@ CREATE TABLE `cafe_categories` (
 --
 
 INSERT INTO `cafe_categories` (`id`, `cafe_id`, `category_name`) VALUES
-(28, 8, 'social space'),
-(29, 8, 'roastery'),
-(30, 8, 'live music'),
-(31, 8, 'outdoor seating'),
-(32, 8, 'pet friendly');
+(45, 14, 'productivity'),
+(46, 14, 'social space'),
+(47, 14, 'roastery'),
+(48, 14, 'live music'),
+(49, 14, 'outdoor seating');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ CREATE TABLE `cafe_photos` (
 --
 
 INSERT INTO `cafe_photos` (`photo_id`, `cafe_id`, `file_path`) VALUES
-(3, 8, '/uploads/cafe_image/cafe_69214e40b8ebd9.38359555.jpg');
+(6, 14, '/uploads/cafe_image/cafe_6921d1197ebbf7.17869995.webp');
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,6 @@ INSERT INTO `users` (`user_id`, `username`, `user_password`, `user_email`, `admi
 (34, 'jokowi_widodo', '$2y$12$iL6AmK23063sA9uK4nDq4OXc4evp0Am2hqyivzTwxU6lKoMYkLb06', 'jokowi@istana.go.id', 0, '2025-11-21 03:13:11'),
 (35, 'prabowo08', '$2y$12$cjNeKGaX24dSyf1qFTiAyeegHTFQZb5PEByM0PEU9sHx1P47AQybK', 'prabowo@kemhan.go.id', 0, '2025-11-21 03:13:11'),
 (36, 'gibran_rakabuming', '$2y$12$09yYB.XxbZT.wfTsUbQi3eeL8aoq7DSA3KBSQ5AyGSh6.g96ZSo7O', 'gibran@solo.go.id', 0, '2025-11-21 03:13:11'),
-(37, 'sri_mulyani', '$2y$12$WFgDtCfbBYmIE4DMfpnueORaqkjyukFshc3RneoSl98nXf8FxWJEa', 'sri.mulyani@kemenkeu.go.id', 0, '2025-11-21 03:13:12'),
 (38, 'luhut_binsar', '$2y$12$I4bqCvmXEC6WFUsirJw1LeQYptTx8QwyEDdhdI2E81Rx5GCw.aYmi', 'luhut@maritim.go.id', 0, '2025-11-21 03:13:12'),
 (39, 'erick_thohir', '$2y$12$lMeL7KuARo.f5eX5deEL6OkXxuH/HNA0IhkuBtxbMrDhbVFvmUkAa', 'erick@bumn.go.id', 0, '2025-11-21 03:13:12'),
 (40, 'basuki_hadimuljono', '$2y$12$iQSzeMY3f2XihxbOZMqZxeUGXG96PLu/v2fHvI1nTyyT2qewnfxgy', 'pakbas@pupr.go.id', 0, '2025-11-21 03:13:13'),
@@ -151,7 +151,6 @@ INSERT INTO `user_details` (`detail_id`, `user_id`, `user_full_name`, `user_birt
 (24, 34, 'Ir. H. Joko Widodo', '1961-06-21', '2025-11-21 03:13:11', 'Presiden RI'),
 (25, 35, 'H. Prabowo Subianto', '1951-10-17', '2025-11-21 03:13:11', 'Menteri Pertahanan'),
 (26, 36, 'Gibran Rakabuming Raka', '1987-10-01', '2025-11-21 03:13:11', 'Wapres Terpilih'),
-(27, 37, 'Sri Mulyani Indrawati', '1962-08-26', '2025-11-21 03:13:12', 'Menteri Keuangan'),
 (28, 38, 'Luhut Binsar Pandjaitan', '1947-09-28', '2025-11-21 03:13:12', 'Menko Marves'),
 (29, 39, 'Erick Thohir', '1970-05-30', '2025-11-21 03:13:12', 'Menteri BUMN'),
 (30, 40, 'Basuki Hadimuljono', '1954-11-05', '2025-11-21 03:13:13', 'Menteri PUPR'),
@@ -205,19 +204,19 @@ ALTER TABLE `user_details`
 -- AUTO_INCREMENT untuk tabel `cafes`
 --
 ALTER TABLE `cafes`
-  MODIFY `cafe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cafe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `cafe_categories`
 --
 ALTER TABLE `cafe_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT untuk tabel `cafe_photos`
 --
 ALTER TABLE `cafe_photos`
-  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

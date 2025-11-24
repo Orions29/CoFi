@@ -58,7 +58,7 @@
 }
 
 .cafe-recent-wrapper {
-  width: 75%;
+  width: 45%;
 }
 .cafe-recent-wrapper h2 {
   text-align: start;
@@ -95,6 +95,9 @@
   padding: 10px 0;
   font-size: 2.6rem;
   text-align: center;
+}
+.form-container .cafe-description .form-control {
+  font-family: "Segoe Ui" !important;
 }
 .form-container .main-form-wrapper {
   padding: 0 21px;
@@ -197,6 +200,7 @@
   width: 90%;
 }
 .user-manage-table table {
+  padding-right: 4px;
   table-layout: fixed;
   width: 100%;
   font-size: 1.2rem;

@@ -1,9 +1,40 @@
+// variabel
+$c-primary: #c1785a;
+$c-secondary: #84994f;
+$c-accent: #8abeb9;
+$c-social: #fcb53b;
+$c-white: #fff;
+
+$f-display: "homenaje", sans-serif;
+$f-hand: "Caveat", cursive;
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "homenaje", "caveat", "segoe ui", "poppins";
+	font-family: "homenaje", "caveat", "segoe ui";
 }
+
+// ScrollBar Customize
+::-webkit-scrollbar {
+	width: 10px; // Lebar scrollbar vertikal
+	height: 10px; // Tinggi scrollbar horizontal
+}
+// Track (Latar belakang scrollbar)
+::-webkit-scrollbar-track {
+	background: #f7f1dec0; // Warna cream (#f7f1de)
+	border-radius: 5px;
+}
+// Thumb (Batang yang digeser)
+::-webkit-scrollbar-thumb {
+	background-color: $c-primary;
+	border-radius: 10px;
+	border: 2px solid #f7f1dec0;
+	&:hover {
+		background-color: darken($c-primary, 10%);
+	}
+}
+
 body {
 	font-family: "Poppins", sans-serif;
 	height: 100vh;
@@ -16,6 +47,88 @@ body {
 	font-weight: 100;
 	font-style: normal;
 }
+
+// Preloader Loading Map User
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999; // Karena aku gatau nanti indexnya apa aja isinya yaudah tak polll kan
+	background-color: #f7f1de;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	// Transisi buat slide ke atas
+	transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+
+	// Kelas ini nanti ditambahin pake JS pas loading kelar
+	&.loaded {
+		transform: translateY(-100%);
+	}
+
+	.loader-content {
+		text-align: center;
+		color: $c-primary; // Warna Coklat Kopi
+
+		.preloader-header {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 35px;
+			&.regis {
+				margin-bottom: 20px;
+			}
+			.logo-form {
+				width: 70%;
+				height: auto;
+				fill: #c1785a;
+				&.register {
+					width: 30%;
+					height: auto;
+				}
+			}
+		}
+
+		// Loading Title
+		h2 {
+			font-size: 1.5rem;
+			letter-spacing: 2px;
+			margin-bottom: 5px;
+		}
+		// Percent an Loading (yang angka)
+		#load-percent {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: $c-primary;
+			margin-bottom: 15px;
+		}
+
+		// Container Bar (Wadah Abu/Transparan)
+		.loading-bar-container {
+			width: 200px; // Lebarin dikit
+			height: 6px;
+			background: rgba($c-primary, 0.2);
+			border-radius: 10px;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+
+			// Isian Bar
+			.loading-bar-fill {
+				height: 100%;
+				width: 0%; // Mulai dari 0 kiri sendiri
+				background: $c-primary;
+				border-radius: 10px;
+				transition: width 0.3s ease-out;
+			}
+		}
+	}
+}
+
+// Alert Section
 .alerta-container {
 	display: flex;
 	justify-content: center;
@@ -70,12 +183,14 @@ body {
 				fill: #f7f1de;
 			}
 		}
+		// Admin Section
 		.admin-greet {
 			height: 100%;
 			display: flex;
 			align-items: center;
 			width: 15%;
 			a {
+				line-height: 30px;
 				text-align: right;
 				width: 100%;
 				color: #fff;
@@ -84,48 +199,57 @@ body {
 				margin: 0;
 			}
 		}
-	}
-	// Default NavBar
-	.navbar-tabs {
-		position: fixed;
-		width: 100%;
-		z-index: 11;
-		// Ini Buat Ngatur Kebawahan Navbar Tabs Verry Important
-		margin-top: 80px;
-		padding: 0px 50px;
-		display: flex;
-		justify-content: start;
-		gap: 20px;
-		a {
-			text-decoration: none;
-			color: #fff;
+		// Header Admin dan Header User
+		.admin-greet,
+		.container-header {
+			max-width: 11%;
 		}
-		.navbar-tab {
-			margin-top: -15px;
-			width: 180px;
-			height: 65px;
-			display: flex;
-			padding: 30px 10px 10px 10px;
-			justify-content: center;
-			align-items: center;
-			border-radius: 0 0 20px 20px;
-			background: #a8bba3;
-			box-shadow: 0 5px 6.4px 0 rgba(0, 0, 0, 0.25);
-			list-style-type: none;
-			font-size: 1.5rem;
-			transition: 0.3s all ease;
-			span {
-				font-size: 2rem;
-				padding-right: 10px;
-			}
-			&:hover {
-				margin-top: -8px;
-				background-color: #a8bba3;
-			}
-			&:active {
-				margin-top: 0px;
-				box-shadow: none;
-			}
+	}
+}
+// Default NavBar
+.navbar-tabs {
+	position: fixed;
+	width: 100%;
+	z-index: 11;
+	// Ini Buat Ngatur Kebawahan Navbar Tabs Verry Important
+	margin-top: 85px;
+	padding: 0px 50px;
+	display: flex;
+	justify-content: start;
+	gap: 20px;
+	&.user {
+		justify-content: center;
+		// padding-right: 100px;
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+	.navbar-tab {
+		margin-top: -15px;
+		width: 180px;
+		height: 65px;
+		display: flex;
+		padding: 35px 10px 10px 10px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0 0 20px 20px;
+		background: #a8bba3;
+		box-shadow: 0 5px 6.4px 0 rgba(0, 0, 0, 0.25);
+		list-style-type: none;
+		font-size: 1.5rem;
+		transition: 0.3s all ease;
+		span {
+			font-size: 2rem;
+			padding-right: 10px;
+		}
+		&:hover {
+			margin-top: -8px;
+			background-color: #a8bba3;
+		}
+		&:active {
+			margin-top: 0px;
+			box-shadow: none;
 		}
 	}
 }
@@ -146,7 +270,6 @@ body {
 		justify-content: center;
 		height: 100%;
 		width: 45%;
-		// border: solid #305669;
 		&.regis {
 			margin-bottom: 40px;
 		}
@@ -237,5 +360,147 @@ body {
 				}
 			}
 		}
+	}
+}
+
+// Buat Map
+/* Pastikan map punya tinggi! Kalau 0px gak bakal muncul */
+.themap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+.mapboxgl-ctrl-top-right {
+	margin: 120px 20px 0px 0px;
+	right: 0;
+	top: 0;
+}
+#map {
+	width: 100%;
+	height: 100vh;
+	/* Full screen */
+}
+
+/* Style untuk Popup Mapbox */
+.mapboxgl-popup-content {
+	font-family: "homenaje";
+	padding: 0;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	min-width: 220px;
+	max-width: 250px;
+}
+
+.mapboxgl-popup-close-button {
+	color: white;
+	font-size: 24px;
+	top: 5px;
+	right: 8px;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	z-index: 2;
+}
+
+/* Card Wrapper */
+.popup-card {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Gambar Cafe */
+.popup-img {
+	width: 100%;
+	height: 130px; /* WAJIB ADA TINGGI */
+	object-fit: cover;
+	display: block;
+}
+
+/* Info Container */
+.popup-info {
+	padding: 12px 10px;
+	background: #fff;
+}
+
+.popup-info h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 700;
+	color: #333;
+	margin-bottom: 4px;
+}
+
+.popup-rating {
+	font-size: 13px;
+	font-weight: 600;
+	color: #f59e0b;
+	margin-bottom: 6px;
+}
+
+.btn-detail {
+	display: inline-block;
+	width: 100%;
+	margin-top: 10px;
+	padding: 6px 0;
+	background-color: #6f4e37;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 500;
+	transition: background 0.2s;
+}
+
+.btn-detail:hover {
+	background-color: #5a3e2b;
+	color: #fff;
+}
+
+// Offcanvas Style Section
+.offcanvas-body {
+	background-color: #f7f1de;
+	.btn {
+		color: #fff !important;
+	}
+	p {
+		font-family: "Segoe Ui";
+	}
+}
+#btnFullDetail {
+	background-color: #305669;
+	&:hover {
+		background-color: #485f6b;
+	}
+}
+#btnMaps {
+	background-color: #a8bba3;
+	border: none;
+	&:hover {
+		background-color: #869482;
+	}
+}
+
+.badge.map-cafe-detail {
+	padding: 5px 7px !important;
+	font-size: 1.2rem !important;
+	font-family: $f-hand;
+	font-weight: 100 !important;
+	color: $c-white !important;
+	background-color: #546168;
+	.btn-close {
+		width: 4px;
+		height: auto;
+	}
+
+	// Modifier classes
+	&.cat-productivity {
+		background-color: $c-secondary !important;
+	}
+	&.cat-social-space {
+		background-color: $c-social !important;
+	}
+	&.cat-roastery {
+		background-color: $c-primary !important;
 	}
 }

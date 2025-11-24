@@ -1,5 +1,5 @@
 <?php
-// Destroyer Session dan destroyer handler
+// NOTE -Destroyer Session dan destroyer handler
 
 $_SESSION = [];
 session_destroy();
