@@ -1,11 +1,14 @@
 <?php
 // Salting Procedure
-$loginSalt = $_ENV['ADD_CAFE_SALT'];
+$loginSalt = $_ENV['ADD_CAFE_SALT'] ?? null;
 $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
 ?>
+<div class="title-container text-center mb-4">
+    <h1 class="brand-title" style="color: var(--ca-primary);">Add Cafe</h1>
+    <hr class="divider-soft">
+</div>
 <div class="main-container cafe-editor d-flex">
     <div class="form-container" id="edit-cafe-wrapper">
-        <h1 class="homenaje-regular form-title">Add Cafe</h1>
         <form action="/cafe/add" method="post" enctype="multipart/form-data">
             <!-- Token Adding -->
             <input type="hidden" name="add_cafe_token_attempt" value="<?= $_SESSION['add_cafe_token'] ?>">
@@ -213,4 +216,12 @@ $_SESSION['add_cafe_token'] = $loginSalt . bin2hex(random_bytes(20));
             displayElement.textContent = "Belum ada kategori terpilih.";
         }
     }
+
+    const categoryCheckboxes = document.querySelectorAll("#categoryCafeContainer .form-check-input");
+
+    categoryCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", updateSelectedCategories);
+    });
+
+    updateSelectedCategories();
 </script>
