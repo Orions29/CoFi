@@ -340,7 +340,7 @@ $f-hand: "Caveat", cursive;
 
 // TABLES (User Manage) SECTION
 
-// Wrapper Utama Page User Manage
+// Wrapper Utama Tabel User Manage
 .user-manage-table {
 	width: 90%;
 
@@ -361,7 +361,10 @@ $f-hand: "Caveat", cursive;
 			color: $c-text-white;
 			font-weight: 100;
 			font-size: 1.4rem;
-			padding: 10px 0 10px 0px;
+			padding: 10px 0 10px 20px;
+			&#user-table-action {
+				padding-left: 0px;
+			}
 		}
 	}
 
@@ -384,6 +387,8 @@ $f-hand: "Caveat", cursive;
 			}
 		}
 	}
+
+	// Buat Button
 }
 
 // CATALOGUE & UPDATE Section
@@ -400,7 +405,7 @@ $f-hand: "Caveat", cursive;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	border: 1px solid rgba($c-primary, 0.1);
 
-	.cafe-desk-container {
+	.cafe-desc-container {
 		max-height: 250px;
 		overflow-y: scroll;
 		margin-bottom: 10px;

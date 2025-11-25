@@ -62,6 +62,11 @@ $routes = [
         'title' => 'Dashboard',
         'auth' => 'user'
     ],
+    'user/catalouge' => [
+        'file' => 'catalogue',
+        'title' => 'Cafe Catalogue',
+        'auth' => 'user'
+    ],
     'cafe/details' => [
         'file' => 'admin_add_cafe',
         'title' => 'ADMIN | Tambah Cafe',
