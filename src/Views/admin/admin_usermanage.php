@@ -27,9 +27,12 @@ try {
 
 $sqlConn->close();
 ?>
-<div class="main-container user-manage d-flex">
+<div class="title-container text-center mb-2">
+    <h1 class="brand-title" style="color: var(--ca-primary);">User Manage</h1>
+    <hr class="divider-soft">
+</div>
+<div class="main-container user-manage d-flex flex-column">
     <div class="form-container" id="user-manage-wrapper">
-        <h1 class="homenaje-regular form-title">User Manage Page</h1>
         <div class="main-form-wrapper user-manage-table-wrapper">
             <div class="form-wrapper d-flex justify-content-center">
                 <form action="/admin/usermanage" method="get">
@@ -106,6 +109,7 @@ $sqlConn->close();
                                             value="delete_user"
                                             class="btn btn-danger"
                                             onclick="return confirm('Yakin mau hapus?')">
+                                            <i class="bi bi-trash"></i>
                                             Delete
                                         </button>
                                     </form>
@@ -115,6 +119,7 @@ $sqlConn->close();
                                             name="action"
                                             value="update"
                                             class="btn btn-primary">
+                                            <i class="bi bi-pencil-square"></i>
                                             Update
                                         </button>
                                     </form>

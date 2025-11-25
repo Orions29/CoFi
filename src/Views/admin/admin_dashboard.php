@@ -20,7 +20,7 @@ $sqlRecent = "SELECT
 $recentCafes = $sqlConn->query($sqlRecent);
 ?>
 
-<div class="main-container">
+<div class="main-container admin-dashboard">
     <div class="form-container dashboard-page-container" id="edit-cafe-wrapper">
 
         <div class="title-container d-flex align-items-center flex-column" style="width: 100%;">
@@ -32,11 +32,17 @@ $recentCafes = $sqlConn->query($sqlRecent);
             <!-- Wrapper untuk counter user dan cafe -->
             <div class="counter-wrapper">
                 <div class="counter-contents" id="cafe-counter">
-                    <h2><span class="material-symbols-outlined">storefront</span> Cafe Counter</h2>
+                    <div class="counter-title-wrapper d-flex align-items-center" style="width: 100%;">
+                        <span class="material-symbols-outlined">storefront</span>
+                        <h2> Cafe Counter</h2>
+                    </div>
                     <h1><?= number_format($totalCafe) ?></h1>
                 </div>
                 <div class="counter-contents" id="user-counter">
-                    <h2><span class="material-symbols-outlined">supervised_user_circle</span> User Counter</h2>
+                    <div class="counter-title-wrapper d-flex align-items-center">
+                        <span class="material-symbols-outlined">supervised_user_circle</span>
+                        <h2> User Counter</h2>
+                    </div>
                     <h1><?= number_format($totalUser) ?></h1>
                 </div>
             </div>

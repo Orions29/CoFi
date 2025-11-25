@@ -35,12 +35,18 @@ $f-hand: "Caveat", cursive;
 	}
 }
 
+html,
 body {
+	height: 100%;
 	font-family: "Poppins", sans-serif;
-	height: 100vh;
+	// height: 100vh;
 	position: relative;
 	z-index: 1; /* kasih konteks utama */
 	background: #f7f1de !important;
+}
+
+.main-container {
+	height: 100%;
 }
 .homenaje-regular {
 	font-family: "Homenaje", sans-serif;
@@ -147,7 +153,8 @@ body {
 // Default Header Section
 .dashboard-header {
 	width: 100%;
-	height: 22%;
+	height: 150px;
+	min-height: max-content;
 	overflow-x: hidden;
 	color: #fff;
 	font-family: "Homenaje", sans-serif;
@@ -156,7 +163,6 @@ body {
 		width: 100%;
 		position: fixed;
 		padding: 15px 50px;
-		max-height: 60%;
 		display: flex;
 		z-index: 12;
 		justify-content: space-between;
@@ -202,7 +208,7 @@ body {
 		// Header Admin dan Header User
 		.admin-greet,
 		.container-header {
-			max-width: 11%;
+			max-width: 12%;
 		}
 	}
 }
@@ -212,7 +218,7 @@ body {
 	width: 100%;
 	z-index: 11;
 	// Ini Buat Ngatur Kebawahan Navbar Tabs Verry Important
-	margin-top: 85px;
+	margin-top: 80px;
 	padding: 0px 50px;
 	display: flex;
 	justify-content: start;

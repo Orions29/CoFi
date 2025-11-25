@@ -8,8 +8,6 @@ require __DIR__ . "/../src/Core/init.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/styles/styles.css">
-    <link rel="stylesheet" href="/assets/styles/style.map.catalogue.dashboard.css">
-    <link rel="stylesheet" href="/assets/styles/admin/styles_admin.css">
     <title>
         <?php
         echo $pageTitle;

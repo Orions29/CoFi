@@ -1,23 +1,8 @@
-<?php 
+<?php
 // login / db
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Finder - Catalogue</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../public/assets/styles/style.map.catalogue.dashboard.css">
-</head>
-<body>
-    
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-ca">
     <div class="container justify-content-center">
@@ -208,7 +193,7 @@
                     <span class="material-symbols-outlined" style="color:#a65c42;font-size:50px;">coffee</span>
                     <span class="material-symbols-outlined" style="color:#a65c42;font-size:50px;">coffee</span>
                     <span class="material-symbols-outlined" style="color:#a65c42;font-size:50px;">coffee</span>
-                        <span class="material-symbols-outlined" style="color:grey;font-size:50px;">coffee</span>
+                    <span class="material-symbols-outlined" style="color:grey;font-size:50px;">coffee</span>
                     <div class="price">Rp.30.000 - RP.90.000</div>
                 </div>
 
@@ -240,4 +225,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

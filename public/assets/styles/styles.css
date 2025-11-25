@@ -24,12 +24,17 @@
   background-color: rgb(168.6343612335, 94.0264317181, 63.3656387665);
 }
 
+html,
 body {
+  height: 100%;
   font-family: "Poppins", sans-serif;
-  height: 100vh;
   position: relative;
   z-index: 1; /* kasih konteks utama */
   background: #f7f1de !important;
+}
+
+.main-container {
+  height: 100%;
 }
 
 .homenaje-regular {
@@ -121,7 +126,9 @@ body {
 
 .dashboard-header {
   width: 100%;
-  height: 22%;
+  height: 150px;
+  min-height: -moz-max-content;
+  min-height: max-content;
   overflow-x: hidden;
   color: #fff;
   font-family: "Homenaje", sans-serif;
@@ -130,7 +137,6 @@ body {
   width: 100%;
   position: fixed;
   padding: 15px 50px;
-  max-height: 60%;
   display: flex;
   z-index: 12;
   justify-content: space-between;
@@ -175,14 +181,14 @@ body {
 }
 .dashboard-header .container-header .admin-greet,
 .dashboard-header .container-header .container-header {
-  max-width: 11%;
+  max-width: 12%;
 }
 
 .navbar-tabs {
   position: fixed;
   width: 100%;
   z-index: 11;
-  margin-top: 85px;
+  margin-top: 80px;
   padding: 0px 50px;
   display: flex;
   justify-content: start;
