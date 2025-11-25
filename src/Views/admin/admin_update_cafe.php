@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/../../Core/database.php";
+require_once __DIR__ . "/../../Core/database.php";
 
 // MASTER KATEGORI
 $availableCategories = [
@@ -137,7 +137,7 @@ function renderCoffeeRating($rating, $max = 5)
                                 <div class="cafe-location">
                                     <i class="bi bi-geo-alt-fill"></i> <?= $cafe['latitude'] ?>, <?= $cafe['longitude'] ?>
                                 </div>
-                                <div class="cafe-desk-container">
+                                <div class="cafe-desc-container">
                                     <p class="cafe-desc"><?= nl2br($deskripsi) ?></p>
                                 </div>
 

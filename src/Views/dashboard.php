@@ -65,9 +65,9 @@
             container: 'map',
             style: 'mapbox://styles/orions175/cmhlpivkl002e01pg3mns63q9',
             center: [110.366857, -7.783231], // Koordinat [Lng, Lat] / [Longitude, Latitude]
-            zoom: 16.84,
-            bearing: -140.30,
-            pitch: 70.59,
+            zoom: 15.55,
+            bearing: -110.30,
+            pitch: 45,
             antialias: true
         });
         map.addControl(new mapboxgl.NavigationControl());
@@ -113,6 +113,14 @@
                     }, 1000);
                 }
             }, 500);
+            // Animasi Awal Ketika nanti dia sudah ke load
+            map.flyTo({
+                center: [110.366857, -7.783231],
+                zoom: 16.84,
+                bearing: -140.30,
+                pitch: 70.59,
+                duration: 3000
+            });
         });
 
         // Global Store Data
@@ -131,8 +139,8 @@
             document.getElementById('sidebarDesc').innerText = cafe.desc;
 
             // Updater Link
-            document.getElementById('btnFullDetail').href = `/cafe/detail?id=${cafe.id}`;
-            document.getElementById('btnMaps').href = `http://googleusercontent.com/maps.google.com/maps?q=${cafe.lat},${cafe.lng}`;
+            document.getElementById('btnFullDetail').href = `user/catalouge?searchKey=${cafe.name}`;
+            document.getElementById('btnMaps').href = `https://www.google.com/maps/dir/?api=1&destination=${cafe.lat},${cafe.lng}`;
 
             // Category Generator
             const catContainer = document.getElementById('sidebarCategories');
@@ -153,6 +161,7 @@
             // Reset dulu ke deskripsi asli
             descEl.innerHTML = `<div class="mb-2">Loading alamat...</div>${cafe.desc}`;
 
+            // NOTE Ini Buat GeoCoding (Ngambil Alamat)
             const url = `https://api.mapbox.com/search/geocode/v6/reverse?longitude=${cafe.lng}&latitude=${cafe.lat}&access_token=${mapboxgl.accessToken}&limit=1`;
 
             fetch(url)

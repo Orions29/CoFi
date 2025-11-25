@@ -24,8 +24,14 @@
                 </g>
             </svg>
         </div>
-        <div class="admin-greet">
-            <a href="/logout">Welcome Back, <?php echo htmlspecialchars($_SESSION['username']); ?> </a>
+        <div class="user-greet">
+            <a href="/logout"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Logout dari Akun"
+                onclick="return confirm('Serius nih mau logout, <?php echo htmlspecialchars($_SESSION['username']); ?>?');">
+                Welcome Back, <?php echo htmlspecialchars($_SESSION['username']); ?>
+            </a>
         </div>
     </div>
     <nav class="navbar-tabs">

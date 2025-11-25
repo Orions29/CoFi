@@ -2,20 +2,22 @@
 $pageTitle = "Laman User";
 ?>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=coffee,dashboard,edit,map_search,storefront,supervised_user_circle" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=coffee,dashboard,edit,map_search,pets,storefront,supervised_user_circle" />
 <!-- Buat MAPBOX -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css' rel='stylesheet' />
 <header class="dashboard-header">
     <div class="container-header">
-        <a href="/dashboard" style="color: white; text-decoration:none;">
-            <div class="page-title">
-                <span class="material-symbols-outlined" style="font-size: 3rem;">
-                    map_search
-                </span>
-                <h1>The Map</h1>
-            </div>
-        </a>
+        <div class="page-title-wrapper">
+            <a href="/dashboard" style="color: white; text-decoration:none;">
+                <div class="page-title">
+                    <span class="material-symbols-outlined" style="font-size: 3rem;">
+                        map_search
+                    </span>
+                    <h1>The Map</h1>
+                </div>
+            </a>
+        </div>
         <div class="hero-logo">
             <svg class="hero-logo-icons" viewBox="0 0 138 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="CoFi Logo">
@@ -32,14 +34,18 @@ $pageTitle = "Laman User";
                 </g>
             </svg>
         </div>
-        <div class="admin-greet">
-            <a href="/logout">Welcome Back, <?php
-                                            echo htmlspecialchars($_SESSION['username']);
-                                            ?></a>
+        <div class="user-greet">
+            <a href="/logout"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Logout dari Akun"
+                onclick="return confirm('Serius nih mau logout, <?php echo htmlspecialchars($_SESSION['username']); ?>?');">
+                Welcome Back, <?php echo htmlspecialchars($_SESSION['username']); ?>
+            </a>
         </div>
     </div>
     <nav class="navbar-tabs user">
-        <a href="/calagoue">
+        <a href="/user/catalouge">
             <div class="navbar-tab" id="navbar-dashboard">
                 <span class="material-symbols-outlined">
                     dashboard

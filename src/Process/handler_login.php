@@ -2,7 +2,7 @@
 // kalau udah ada ga di require lagi
 require_once __DIR__ . "/../Core/database.php";
 // Querrying Section
-$selectLoginUser = "SELECT * FROM USERS U WHERE U.USERNAME=? ";
+$selectLoginUser = "SELECT * FROM USERS U WHERE BINARY U.USERNAME=? ";
 // Execute Section
 if (isset($_POST['action']) && $_POST['action'] == 'login_attempt') {
     // Ngecek Tokennya sama endak sama yang dikirim

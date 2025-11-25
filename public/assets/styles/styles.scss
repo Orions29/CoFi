@@ -1,12 +1,74 @@
-// variabel
-$c-primary: #c1785a;
-$c-secondary: #84994f;
-$c-accent: #8abeb9;
-$c-social: #fcb53b;
-$c-white: #fff;
+$pal-rust: #c1785a; // Main Brand
+$pal-olive: #84994f; // Productivity/Green
+$pal-teal: #8abeb9; // Search/Info
+$pal-yellow: #fcb53b; // Social/Accent
+$pal-cream: #f7f1de; // Backgrounds
+$pal-red: #a72703; // Danger
+$pal-white: #ffffff;
+$pal-grey-text: #6c757d; // Standard bootstrap grey
 
-$f-display: "homenaje", sans-serif;
+// --- Semantic Variabel
+$c-primary: $pal-rust;
+$c-secondary: $pal-olive;
+$c-accent: $pal-yellow;
+$c-social: $pal-yellow;
+$c-info: $pal-teal;
+$c-danger: $pal-red;
+$c-white: #fff;
+$c-black: #444;
+$c-bg-card: $pal-cream;
+$c-text-white: $pal-white;
+$c-text-muted: $pal-grey-text;
+
+// --- Fonts ---
+$f-display: "Homenaje", sans-serif;
+$f-sans: "Segoe UI", sans-serif;
 $f-hand: "Caveat", cursive;
+
+// --- CSS Variables buat JS barangkali
+:root {
+	--ca-primary: #{$c-primary};
+	--ca-secondary: #{$c-secondary};
+	--ca-bg-card: #{$c-bg-card};
+	--ca-accent: #{$c-accent};
+	--ca-red: #{$c-danger};
+	--ca-black: #{$c-black};
+}
+
+%flex-center {
+	display: flex;
+	align-items: center;
+}
+
+%flex-center-col {
+	@extend %flex-center;
+	flex-direction: column;
+}
+
+%std-shadow {
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+	transition: 0.3s all ease;
+}
+
+%btn-floating-base {
+	background-color: $c-secondary;
+	font-family: $f-display;
+	font-size: 28px;
+	color: $c-text-white;
+	border: none;
+	padding: 10px 25px;
+	border-radius: 0 0 20px 20px;
+	@extend %flex-center;
+	gap: 6px;
+	cursor: pointer;
+	transition: 0.2s;
+	z-index: 977;
+
+	&:hover {
+		transform: translateY(5px);
+		background-color: darken($c-secondary, 10%);
+	}
+}
 
 * {
 	margin: 0;
@@ -47,6 +109,10 @@ body {
 
 .main-container {
 	height: 100%;
+	&.user {
+		width: 100%;
+		padding: 0px 15px;
+	}
 }
 .homenaje-regular {
 	font-family: "Homenaje", sans-serif;
@@ -190,7 +256,8 @@ body {
 			}
 		}
 		// Admin Section
-		.admin-greet {
+		.admin-greet,
+		.user-greet {
 			height: 100%;
 			display: flex;
 			align-items: center;
@@ -207,8 +274,11 @@ body {
 		}
 		// Header Admin dan Header User
 		.admin-greet,
-		.container-header {
-			max-width: 12%;
+		.container-header,
+		.user-greet,
+		.page-title-wrapper {
+			// min-width: 9%;
+			max-width: 170px;
 		}
 	}
 }
@@ -225,7 +295,8 @@ body {
 	gap: 20px;
 	&.user {
 		justify-content: center;
-		// padding-right: 100px;
+		padding: 0;
+		margin-top: 85px;
 	}
 	a {
 		text-decoration: none;
@@ -508,5 +579,262 @@ body {
 	}
 	&.cat-roastery {
 		background-color: $c-primary !important;
+	}
+}
+
+// CATALOUGE Section
+
+.title-container {
+	margin: 0;
+	> h1 {
+		font-size: 3.5rem;
+		padding: 0 !important;
+		margin: 0;
+	}
+	.divider-soft {
+		border: none;
+		border-top: 5px dashed rgba($c-primary, 0.4);
+		width: 100%;
+		height: 0;
+	}
+}
+
+.main-container {
+	.row {
+		margin: 0 !important;
+	}
+}
+// Card Utama
+.cafe-card {
+	background: #fff;
+	border-radius: 14px;
+	padding: 25px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	display: flex;
+	gap: 25px;
+	margin-bottom: 30px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border: 1px solid rgba($c-primary, 0.1);
+
+	.cafe-desc-container {
+		max-height: 170px;
+		overflow-y: scroll;
+		margin-bottom: 10px;
+	}
+
+	// &:hover {
+	// 	transform: translateY(-5px);
+	// 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+	// }
+
+	// Carousel (Kiri)
+	.carousel {
+		width: 350px;
+		flex-shrink: 0;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		max-height: 300px;
+		.carousel-inner {
+			height: 100%;
+			.carousel-item {
+				height: 100%;
+			}
+		}
+		img.cafeCarouselImg {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	// Details (Kanan)
+	.card-details {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+		.top-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			h2 {
+				margin: 0;
+				font-family: $f-display;
+				font-size: 2.4rem;
+				color: $c-primary;
+				line-height: 1;
+			}
+
+			.price-rating-wrapper {
+				text-align: right;
+
+				.coffee-rating {
+					color: $c-social; // Kuning/Gold
+					display: flex;
+					justify-content: flex-end;
+					margin-bottom: 5px;
+					.material-symbols-outlined {
+						font-size: 2rem;
+					}
+				}
+
+				.price-range {
+					font-family: $f-hand;
+					font-weight: bold;
+					font-size: 2rem;
+					color: $c-black;
+				}
+			}
+		}
+
+		.cafe-location {
+			color: #6c757d;
+			font-size: 1.1rem;
+			margin-top: 5px;
+			i {
+				color: $c-primary;
+			}
+		}
+
+		.cafe-desc {
+			margin-top: 15px;
+			color: #444;
+			font-family: $f-sans;
+			padding-right: 5px;
+			overflow: hidden;
+		}
+
+		// Action Buttons (Delete & Update)
+		.action-buttons {
+			margin-top: auto;
+			display: flex;
+			justify-content: flex-end;
+			gap: 10px;
+			padding-top: 15px;
+
+			.btn {
+				padding: 8px 25px;
+				border-radius: 8px;
+				font-family: $f-display;
+				font-size: 1.2rem;
+				transition: 0.2s;
+
+				&.delete-btn {
+					background-color: $c-danger;
+					&:hover {
+						background-color: darken($c-danger, 10%);
+					}
+				}
+				&.update-btn {
+					background-color: $c-info;
+					&:hover {
+						background-color: darken($c-info, 10%);
+					}
+				}
+			}
+		}
+		// BADGE buat Tanda tandanya
+		.badge {
+			font-family: $f-hand;
+			font-weight: normal;
+			font-size: 1.2rem !important;
+			padding: 6px 10px !important;
+			margin: 0px 5px 5px 0px;
+			text-transform: capitalize !important;
+			&.cat-productivity {
+				background-color: $c-secondary !important;
+				color: #fff;
+			}
+			&.cat-social {
+				background-color: $c-social !important;
+				color: #fff;
+			}
+			&.cat-roastery {
+				background-color: $c-primary !important;
+				color: #fff;
+			}
+			&.red {
+				background-color: $c-danger !important;
+				color: #fff;
+			}
+			&.cat-default {
+				background-color: $pal-grey-text;
+			}
+		}
+	}
+}
+
+// Filter dan Search Bar disini
+.filter-container-wrapper {
+	height: auto;
+	.filter-container {
+		position: sticky;
+		height: auto;
+		//NOTE Top nya aga panjang sesuaikan dengan header di style utama
+		top: 150px;
+		z-index: 10;
+		background-color: $c-white;
+		border-radius: 15px;
+	}
+}
+
+// UPDATE MODAL
+#updateCafeModal {
+	// Header Modal
+	.modal-header {
+		background-color: $c-primary;
+		color: $c-white;
+		border-bottom: none;
+		.modal-title {
+			font-family: $f-display;
+		}
+	}
+	// Body Modalnya
+	.modal-body {
+		background-color: $c-bg-card;
+
+		.form-control,
+		.form-select {
+			border: 1px solid rgba($c-primary, 0.3);
+			border-radius: 8px;
+			padding: 10px 15px;
+			font-family: $f-sans;
+
+			&:focus {
+				border-color: $c-primary;
+				box-shadow: 0 0 0 4px rgba($c-primary, 0.1);
+			}
+		}
+
+		label.form-label {
+			font-family: $f-display;
+			font-size: 1.3rem;
+			color: $c-primary;
+			margin-bottom: 5px;
+		}
+
+		// Panel Kategori (Dropdown)
+		#category-panel {
+			border: 2px dashed rgba($c-primary, 0.3);
+			background: #fff !important;
+
+			// Checkbox
+			.cat-check {
+				accent-color: $c-primary;
+			}
+		}
+
+		// Preview Gambar
+		.card img {
+			border: 2px solid $c-secondary;
+		}
+	}
+
+	// Footer Modalsnya
+	.modal-footer {
+		background-color: #fff;
+		border-top: 1px dashed $c-primary;
 	}
 }

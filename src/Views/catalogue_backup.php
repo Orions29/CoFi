@@ -1,8 +1,6 @@
 <?php
 // login / db
 ?>
-
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-ca">
     <div class="container justify-content-center">

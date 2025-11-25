@@ -63,7 +63,7 @@ $sqlConn->close();
                             <th>
                                 Email
                             </th>
-                            <th style="text-align: center;">
+                            <th id="user-table-action" style="text-align: center;">
                                 Action
                             </th>
                         </tr>
@@ -113,16 +113,17 @@ $sqlConn->close();
                                             Delete
                                         </button>
                                     </form>
-                                    <form action="/" method="post">
+                                    <!-- FIXME - Ini mohon untuk bisa dibuat @Orions29 -->
+                                    <!-- <form action="/" method="post">
                                         <button
                                             type="submit"
                                             name="action"
                                             value="update"
-                                            class="btn btn-primary">
+                                            class="btn update-btn">
                                             <i class="bi bi-pencil-square"></i>
                                             Update
                                         </button>
-                                    </form>
+                                    </form> -->
                                 </div>
                             </td>
                         </tr>
