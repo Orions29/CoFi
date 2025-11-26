@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/../../Core/database.php";
+require_once __DIR__ . "/../../Core/database.php";
 
 // MASTER KATEGORI
 $availableCategories = [
@@ -137,7 +137,7 @@ function renderCoffeeRating($rating, $max = 5)
                                 <div class="cafe-location">
                                     <i class="bi bi-geo-alt-fill"></i> <?= $cafe['latitude'] ?>, <?= $cafe['longitude'] ?>
                                 </div>
-                                <div class="cafe-desk-container">
+                                <div class="cafe-desc-container">
                                     <p class="cafe-desc"><?= nl2br($deskripsi) ?></p>
                                 </div>
 
@@ -258,7 +258,7 @@ function renderCoffeeRating($rating, $max = 5)
                                 <div class="mb-3">
                                     <button type="button" class="btn w-100 categoryBtn"
                                         style="background-color: var(--ca-secondary); color: white; font-family: 'Homenaje'; font-size: 1.2rem;">
-                                        ⚙ Manage Categories
+                                        <i class="bi bi-gear"></i> Manage Categories
                                     </button>
 
                                     <div id="category-panel" style="display:none; margin-top: 10px; padding: 15px; background: white; border-radius: 8px; border: 1px solid rgba(193, 120, 90, 0.3);">

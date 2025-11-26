@@ -1,0 +1,277 @@
+Folder PATH listing for volume Orions-Disk
+Volume serial number is A03F-B57C
+D:.
+│   .env
+│   .env.example
+│   .gitignore
+│   composer.json
+│   composer.lock
+│   README.md
+│   tree.txt
+│   
+├───.vscode
+│       extensions.json
+│       html.code-snippets
+│       launch.json
+│       settings.json
+│       
+├───archive
+│   │   Build With PHP.zip
+│   │   Build With PHP_vanilla JSS.zip
+│   │   HTML CSS Template with Bootstrap.zip
+│   │   
+│   ├───archiveFigma
+│   │       add-cafe.php
+│   │       dashboard.php
+│   │       footer.php
+│   │       header.php
+│   │       index.php
+│   │       style.css
+│   │       update-cafe.php
+│   │       
+│   ├───ExportFigma
+│   │       Admin Page_Default Tambah Cafe.png
+│   │       Admin Page_Update Modals.png
+│   │       Color Pallete.png
+│   │       Update_Catalogue_Dashboard.png
+│   │       
+│   ├───HTML CSS Template with Bootstrap
+│   └───icon
+│       │   vecteezy_coffee-beans-vector-coffee-bean-icon-logo-sign-icon_6839478_249.zip
+│       │   
+│       └───vecteezy_coffee-beans-vector-coffee-bean-icon-logo-sign-icon_6839478_249
+│               Vecteezy-License-Information.pdf
+│               vecteezy_coffee-beans-vector-coffee-bean-icon-logo-sign-icon_6839478.eps
+│               vecteezy_coffee-beans-vector-coffee-bean-icon-logo-sign-icon_6839478.jpg
+│               
+├───logs
+│       .gitkeep
+│       cofi_access.log
+│       cofi_access.log.example
+│       cofi_error.log
+│       cofi_error.log.example
+│       
+├───public
+│   │   .htaccess
+│   │   get_cafes.php
+│   │   index.php
+│   │   
+│   ├───assets
+│   │   ├───icon
+│   │   │       CoFi Logo.svg
+│   │   │       CoFi_ico.svg
+│   │   │       
+│   │   ├───img
+│   │   │       Cofi.png
+│   │   │       
+│   │   ├───js
+│   │   │       script.js
+│   │   │       
+│   │   └───styles
+│   │       │   styles.css
+│   │       │   styles.css.map
+│   │       │   styles.scss
+│   │       │   
+│   │       └───admin
+│   │               styles_admin.css
+│   │               styles_admin.css.map
+│   │               styles_admin.scss
+│   │               
+│   └───uploads
+│       │   .gitkeep
+│       │   
+│       └───cafe_image
+│               cafe_6925e2a8030286.80261116.jpg
+│               cafe_6925e2a803b547.75922669.jpg
+│               cafe_6925e2fe842553.86867375.png
+│               cafe_6925e38b380e40.52549116.png
+│               cafe_6925e38b388ed7.71417734.png
+│               cafe_692664ae920c77.89281525.png
+│               
+├───src
+│   ├───Core
+│   │   │   database.php
+│   │   │   init.php
+│   │   │   localhost+2-key.pem
+│   │   │   localhost+2.pem
+│   │   │   router.php
+│   │   │   
+│   │   └───sql
+│   │           cofi_cafe_db.sql
+│   │           
+│   ├───includes
+│   │       admin_header.php
+│   │       alert.php
+│   │       header.php
+│   │       map_popup.php
+│   │       user_header.php
+│   │       
+│   ├───Process
+│   │       admin_handler_userManage.php
+│   │       destroyer.php
+│   │       dummyData.php
+│   │       handler_add_cafe.php
+│   │       handler_delete_cafe.php
+│   │       handler_login.php
+│   │       handler_regis.php
+│   │       handler_update_cafe.php
+│   │       
+│   └───Views
+│       │   404.php
+│       │   catalogue.php
+│       │   catalogue_backup.php
+│       │   dashboard.php
+│       │   login.php
+│       │   register.php
+│       │   
+│       └───admin
+│               admin_add_cafe.php
+│               admin_dashboard.php
+│               admin_update_cafe.php
+│               admin_usermanage.php
+│               admin_usermanage_update.php
+│               template_deskripsi.txt
+│               
+└───vendor
+    │   autoload.php
+    │   
+    ├───composer
+    │       autoload_classmap.php
+    │       autoload_files.php
+    │       autoload_namespaces.php
+    │       autoload_psr4.php
+    │       autoload_real.php
+    │       autoload_static.php
+    │       ClassLoader.php
+    │       installed.json
+    │       installed.php
+    │       InstalledVersions.php
+    │       LICENSE
+    │       platform_check.php
+    │       
+    ├───graham-campbell
+    │   └───result-type
+    │       │   composer.json
+    │       │   LICENSE
+    │       │   
+    │       └───src
+    │               Error.php
+    │               Result.php
+    │               Success.php
+    │               
+    ├───phpoption
+    │   └───phpoption
+    │       │   composer.json
+    │       │   LICENSE
+    │       │   
+    │       └───src
+    │           └───PhpOption
+    │                   LazyOption.php
+    │                   None.php
+    │                   Option.php
+    │                   Some.php
+    │                   
+    ├───symfony
+    │   ├───polyfill-ctype
+    │   │       bootstrap.php
+    │   │       bootstrap80.php
+    │   │       composer.json
+    │   │       Ctype.php
+    │   │       LICENSE
+    │   │       README.md
+    │   │       
+    │   ├───polyfill-mbstring
+    │   │   │   bootstrap.php
+    │   │   │   bootstrap80.php
+    │   │   │   composer.json
+    │   │   │   LICENSE
+    │   │   │   Mbstring.php
+    │   │   │   README.md
+    │   │   │   
+    │   │   └───Resources
+    │   │       └───unidata
+    │   │               caseFolding.php
+    │   │               lowerCase.php
+    │   │               titleCaseRegexp.php
+    │   │               upperCase.php
+    │   │               
+    │   └───polyfill-php80
+    │       │   bootstrap.php
+    │       │   composer.json
+    │       │   LICENSE
+    │       │   Php80.php
+    │       │   PhpToken.php
+    │       │   README.md
+    │       │   
+    │       └───Resources
+    │           └───stubs
+    │                   Attribute.php
+    │                   PhpToken.php
+    │                   Stringable.php
+    │                   UnhandledMatchError.php
+    │                   ValueError.php
+    │                   
+    └───vlucas
+        └───phpdotenv
+            │   composer.json
+            │   LICENSE
+            │   
+            └───src
+                │   Dotenv.php
+                │   Validator.php
+                │   
+                ├───Exception
+                │       ExceptionInterface.php
+                │       InvalidEncodingException.php
+                │       InvalidFileException.php
+                │       InvalidPathException.php
+                │       ValidationException.php
+                │       
+                ├───Loader
+                │       Loader.php
+                │       LoaderInterface.php
+                │       Resolver.php
+                │       
+                ├───Parser
+                │       Entry.php
+                │       EntryParser.php
+                │       Lexer.php
+                │       Lines.php
+                │       Parser.php
+                │       ParserInterface.php
+                │       Value.php
+                │       
+                ├───Repository
+                │   │   AdapterRepository.php
+                │   │   RepositoryBuilder.php
+                │   │   RepositoryInterface.php
+                │   │   
+                │   └───Adapter
+                │           AdapterInterface.php
+                │           ApacheAdapter.php
+                │           ArrayAdapter.php
+                │           EnvConstAdapter.php
+                │           GuardedWriter.php
+                │           ImmutableWriter.php
+                │           MultiReader.php
+                │           MultiWriter.php
+                │           PutenvAdapter.php
+                │           ReaderInterface.php
+                │           ReplacingWriter.php
+                │           ServerConstAdapter.php
+                │           WriterInterface.php
+                │           
+                ├───Store
+                │   │   FileStore.php
+                │   │   StoreBuilder.php
+                │   │   StoreInterface.php
+                │   │   StringStore.php
+                │   │   
+                │   └───File
+                │           Paths.php
+                │           Reader.php
+                │           
+                └───Util
+                        Regex.php
+                        Str.php
+                        

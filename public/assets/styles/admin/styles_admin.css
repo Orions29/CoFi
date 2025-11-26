@@ -266,7 +266,10 @@
   color: #ffffff;
   font-weight: 100;
   font-size: 1.4rem;
-  padding: 10px 0 10px 0px;
+  padding: 10px 0 10px 20px;
+}
+.user-manage-table.header th#user-table-action {
+  padding-left: 0px;
 }
 .user-manage-table.contents {
   overflow-y: auto;
@@ -297,7 +300,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(193, 120, 90, 0.1);
 }
-.cafe-card .cafe-desk-container {
+.cafe-card .cafe-desc-container {
   max-height: 250px;
   overflow-y: scroll;
   margin-bottom: 10px;

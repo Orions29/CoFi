@@ -14,7 +14,7 @@ $stmt->execute();
 $photos = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
 foreach ($photos as $p) {
-    $file = __DIR__ . "/../public" . $p['file_path'];
+    $file = __DIR__ . "/../../public" . $p['file_path'];
     if (file_exists($file)) unlink($file);
 }
 

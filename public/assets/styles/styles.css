@@ -1,3 +1,12 @@
+:root {
+  --ca-primary: #c1785a;
+  --ca-secondary: #84994f;
+  --ca-bg-card: #f7f1de;
+  --ca-accent: #fcb53b;
+  --ca-red: #a72703;
+  --ca-black: #444;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +44,10 @@ body {
 
 .main-container {
   height: 100%;
+}
+.main-container.user {
+  width: 100%;
+  padding: 0px 15px;
 }
 
 .homenaje-regular {
@@ -164,13 +177,15 @@ body {
   height: 50px;
   fill: #f7f1de;
 }
-.dashboard-header .container-header .admin-greet {
+.dashboard-header .container-header .admin-greet,
+.dashboard-header .container-header .user-greet {
   height: 100%;
   display: flex;
   align-items: center;
   width: 15%;
 }
-.dashboard-header .container-header .admin-greet a {
+.dashboard-header .container-header .admin-greet a,
+.dashboard-header .container-header .user-greet a {
   line-height: 30px;
   text-align: right;
   width: 100%;
@@ -180,8 +195,10 @@ body {
   margin: 0;
 }
 .dashboard-header .container-header .admin-greet,
-.dashboard-header .container-header .container-header {
-  max-width: 12%;
+.dashboard-header .container-header .container-header,
+.dashboard-header .container-header .user-greet,
+.dashboard-header .container-header .page-title-wrapper {
+  max-width: 170px;
 }
 
 .navbar-tabs {
@@ -196,6 +213,8 @@ body {
 }
 .navbar-tabs.user {
   justify-content: center;
+  padding: 0;
+  margin-top: 85px;
 }
 .navbar-tabs a {
   text-decoration: none;
@@ -481,4 +500,226 @@ body {
 }
 .badge.map-cafe-detail.cat-roastery {
   background-color: #c1785a !important;
+}
+
+.title-container {
+  margin: 0;
+}
+.title-container > h1 {
+  font-size: 3.5rem;
+  padding: 0 !important;
+  margin: 0;
+}
+.title-container .divider-soft {
+  border: none;
+  border-top: 5px dashed rgba(193, 120, 90, 0.4);
+  width: 100%;
+  height: 0;
+}
+
+.main-container .row {
+  margin: 0 !important;
+}
+
+.cafe-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(193, 120, 90, 0.1);
+}
+.cafe-card .cafe-desc-container {
+  max-height: 170px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+.cafe-card .carousel {
+  width: 350px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+}
+.cafe-card .carousel .carousel-inner {
+  height: 100%;
+}
+.cafe-card .carousel .carousel-inner .carousel-item {
+  height: 100%;
+}
+.cafe-card .carousel img.cafeCarouselImg {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.cafe-card .card-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cafe-card .card-details .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cafe-card .card-details .top-row h2 {
+  margin: 0;
+  font-family: "Homenaje", sans-serif;
+  font-size: 2.4rem;
+  color: #c1785a;
+  line-height: 1;
+}
+.cafe-card .card-details .top-row .price-rating-wrapper {
+  text-align: right;
+}
+.cafe-card .card-details .top-row .price-rating-wrapper .coffee-rating {
+  color: #fcb53b;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+.cafe-card .card-details .top-row .price-rating-wrapper .coffee-rating .material-symbols-outlined {
+  font-size: 2rem;
+}
+.cafe-card .card-details .top-row .price-rating-wrapper .price-range {
+  font-family: "Caveat", cursive;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #444;
+}
+.cafe-card .card-details .cafe-location {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+.cafe-card .card-details .cafe-location i {
+  color: #c1785a;
+}
+.cafe-card .card-details .cafe-desc {
+  margin-top: 15px;
+  color: #444;
+  font-family: "Segoe UI", sans-serif;
+  padding-right: 5px;
+  overflow: hidden;
+}
+.cafe-card .card-details .action-buttons {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 15px;
+}
+.cafe-card .card-details .action-buttons .btn {
+  padding: 8px 25px;
+  border-radius: 8px;
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+.cafe-card .card-details .action-buttons .btn.delete-btn {
+  background-color: #a72703;
+}
+.cafe-card .card-details .action-buttons .btn.delete-btn:hover {
+  background-color: rgb(116.9, 27.3, 2.1);
+}
+.cafe-card .card-details .action-buttons .btn.update-btn {
+  background-color: #8abeb9;
+}
+.cafe-card .card-details .action-buttons .btn.update-btn:hover {
+  background-color: rgb(105.2142857143, 171.7857142857, 165.3846153846);
+}
+.cafe-card .card-details .badge {
+  font-family: "Caveat", cursive;
+  font-weight: normal;
+  font-size: 1.2rem !important;
+  padding: 6px 10px !important;
+  margin: 0px 5px 5px 0px;
+  text-transform: capitalize !important;
+}
+.cafe-card .card-details .badge.cat-productivity {
+  background-color: #84994f !important;
+  color: #fff;
+}
+.cafe-card .card-details .badge.cat-social {
+  background-color: #fcb53b !important;
+  color: #fff;
+}
+.cafe-card .card-details .badge.cat-roastery {
+  background-color: #c1785a !important;
+  color: #fff;
+}
+.cafe-card .card-details .badge.red {
+  background-color: #a72703 !important;
+  color: #fff;
+}
+.cafe-card .card-details .badge.cat-default {
+  background-color: #6c757d;
+}
+
+.filter-container-wrapper {
+  height: auto;
+}
+.filter-container-wrapper .filter-container {
+  position: sticky;
+  height: auto;
+  top: 150px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.filter-container-wrapper .filter-container .filter-btn {
+  color: var(--ca-black);
+}
+.filter-container-wrapper .filter-container .filter-btn:hover {
+  color: #fff !important;
+  background-color: #6c757d !important;
+}
+
+#updateCafeModal .modal-header {
+  background-color: #c1785a;
+  color: #fff;
+  border-bottom: none;
+}
+#updateCafeModal .modal-header .modal-title {
+  font-family: "Homenaje", sans-serif;
+}
+#updateCafeModal .modal-body {
+  background-color: #f7f1de;
+}
+#updateCafeModal .modal-body .form-control,
+#updateCafeModal .modal-body .form-select {
+  border: 1px solid rgba(193, 120, 90, 0.3);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-family: "Segoe UI", sans-serif;
+}
+#updateCafeModal .modal-body .form-control:focus,
+#updateCafeModal .modal-body .form-select:focus {
+  border-color: #c1785a;
+  box-shadow: 0 0 0 4px rgba(193, 120, 90, 0.1);
+}
+#updateCafeModal .modal-body label.form-label {
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.3rem;
+  color: #c1785a;
+  margin-bottom: 5px;
+}
+#updateCafeModal .modal-body #category-panel {
+  border: 2px dashed rgba(193, 120, 90, 0.3);
+  background: #fff !important;
+}
+#updateCafeModal .modal-body #category-panel .cat-check {
+  accent-color: #c1785a;
+}
+#updateCafeModal .modal-body .card img {
+  border: 2px solid #84994f;
+}
+#updateCafeModal .modal-footer {
+  background-color: #fff;
+  border-top: 1px dashed #c1785a;
 }/*# sourceMappingURL=styles.css.map */
