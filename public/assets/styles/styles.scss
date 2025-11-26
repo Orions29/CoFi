@@ -84,7 +84,7 @@ $f-hand: "Caveat", cursive;
 }
 // Track (Latar belakang scrollbar)
 ::-webkit-scrollbar-track {
-	background: #f7f1dec0; // Warna cream (#f7f1de)
+	background: #f7f1dec0;
 	border-radius: 5px;
 }
 // Thumb (Batang yang digeser)
@@ -777,6 +777,13 @@ body {
 		z-index: 10;
 		background-color: $c-white;
 		border-radius: 15px;
+		.filter-btn {
+			color: var(--ca-black);
+			&:hover {
+				color: #fff !important;
+				background-color: $pal-grey-text !important;
+			}
+		}
 	}
 }
 

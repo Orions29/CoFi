@@ -1,503 +1,486 @@
 :root {
-	--ca-primary: #c1785a;
-	--ca-secondary: #84994f;
-	--ca-bg-card: #f7f1de;
-	--ca-accent: #fcb53b;
-	--ca-red: #a72703;
-	--ca-black: #444;
+  --ca-primary: #c1785a;
+  --ca-secondary: #84994f;
+  --ca-bg-card: #f7f1de;
+  --ca-accent: #fcb53b;
+  --ca-red: #a72703;
+  --ca-black: #444;
 }
 
-.form-wrapper,
-.main-container,
-.form-container .user-manage-table-wrapper {
-	display: flex;
-	align-items: center;
+.form-wrapper, .main-container, .form-container .user-manage-table-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .form-container .user-manage-table-wrapper {
-	flex-direction: column;
+  flex-direction: column;
 }
 
 .add-cafe-container .btn.add-cafe:hover {
-	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-	transition: 0.3s all ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.3s all ease;
 }
 
 .main-container {
-	width: 100%;
-	justify-content: center;
+  width: 100%;
+  justify-content: center;
 }
 .main-container.update {
-	padding: 10px;
-	height: -moz-max-content;
-	height: max-content;
-	width: 100%;
+  padding: 10px;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
 }
 .main-container.update > .row {
-	margin: 0;
-	width: inherit;
+  margin: 0;
+  width: inherit;
 }
-.main-container.cafe-editor,
-.main-container.user-manage,
-.main-container.admin-dashboard {
-	height: -moz-max-content;
-	height: max-content;
+.main-container.cafe-editor, .main-container.user-manage, .main-container.admin-dashboard {
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .title-container {
-	margin: 0;
+  margin: 0;
 }
 .title-container > h1 {
-	font-size: 3.5rem;
-	padding: 0 !important;
-	margin: 0;
+  font-size: 3.5rem;
+  padding: 0 !important;
+  margin: 0;
 }
 .title-container .divider-soft {
-	border: none;
-	border-top: 5px dashed rgba(193, 120, 90, 0.4);
-	width: 100%;
-	height: 0;
+  border: none;
+  border-top: 5px dashed rgba(193, 120, 90, 0.4);
+  width: 100%;
+  height: 0;
 }
 
 .dashboard-container {
-	width: 100%;
-	height: 74%;
-	padding: 0px 10px;
-	display: flex;
-	gap: 25px;
+  width: 100%;
+  height: 74%;
+  padding: 0px 10px;
+  display: flex;
+  gap: 25px;
 }
 
 .counter-wrapper {
-	width: 18%;
-	margin-top: 15px;
-	height: -moz-max-content;
-	height: max-content;
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
+  width: 18%;
+  margin-top: 15px;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .counter-wrapper .counter-contents {
-	padding: 15px;
-	width: 100%;
-	background-color: #f7f1de;
-	border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  background-color: #f7f1de;
+  border-radius: 8px;
 }
 .counter-wrapper .counter-contents .counter-title-wrapper {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .counter-wrapper .counter-contents .counter-title-wrapper h2 {
-	margin: 0;
+  margin: 0;
 }
-.counter-wrapper
-	.counter-contents
-	.counter-title-wrapper
-	.material-symbols-outlined {
-	font-size: 2.6rem;
-	margin-right: 4px;
+.counter-wrapper .counter-contents .counter-title-wrapper .material-symbols-outlined {
+  font-size: 2.6rem;
+  margin-right: 4px;
 }
 .counter-wrapper .counter-contents h1 {
-	text-align: start;
-	padding: 0;
+  text-align: start;
+  padding: 0;
 }
 
 .cafe-recent-wrapper {
-	width: 45%;
+  width: 45%;
 }
 .cafe-recent-wrapper h2 {
-	text-align: start;
-	padding: 0 !important;
-	margin: 0 !important;
+  text-align: start;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .cafe-recent-wrapper .cafe-table-wrapper {
-	padding: 5px 15px;
-	overflow-y: scroll;
-	height: 350px;
+  padding: 5px 15px;
+  overflow-y: scroll;
+  height: 350px;
 }
 .cafe-recent-wrapper .cafe-table-wrapper.add-cafe-table-wrapper {
-	padding: 0;
-	margin: 0 !important;
-	overflow: visible;
-	height: auto;
+  padding: 0;
+  margin: 0 !important;
+  overflow: visible;
+  height: auto;
 }
 .cafe-recent-wrapper .cafe-table-wrapper .card.cafe-recent-card {
-	border: none;
-	background-color: #f7f1de;
+  border: none;
+  background-color: #f7f1de;
 }
 .cafe-recent-wrapper .cafe-table-wrapper .card.cafe-recent-card p {
-	font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
-.cafe-recent-wrapper
-	.cafe-table-wrapper
-	.card.cafe-recent-card
-	.text-body-secondary {
-	font-family: "Segoe UI", sans-serif;
-	font-weight: bold;
-	font-style: italic;
+.cafe-recent-wrapper .cafe-table-wrapper .card.cafe-recent-card .text-body-secondary {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .form-container {
-	margin: 10px 50px 50px;
-	width: 80%;
-	padding: 30px 10px;
-	border-radius: 10px;
-	background: #ffffff;
-	box-shadow: 0 5px 18.9px 1px rgba(0, 0, 0, 0.25);
+  margin: 10px 50px 50px;
+  width: 80%;
+  padding: 30px 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 5px 18.9px 1px rgba(0, 0, 0, 0.25);
 }
 .form-container h1 {
-	padding: 10px 0;
-	font-size: 2.6rem;
-	text-align: center;
+  padding: 10px 0;
+  font-size: 2.6rem;
+  text-align: center;
 }
 .form-container .cafe-description .form-control {
-	font-family: "Segoe UI", sans-serif !important;
+  font-family: "Segoe UI", sans-serif !important;
 }
 .form-container .main-form-wrapper {
-	padding: 0 21px;
-	display: flex;
-	flex-wrap: wrap;
+  padding: 0 21px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .form-container .main-form-wrapper label {
-	font-family: "Homenaje", sans-serif;
-	font-size: 1.3rem;
-	margin: 0;
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.3rem;
+  margin: 0;
 }
 .form-container .left-wrapper,
 .form-container .right-wrapper {
-	width: 50%;
-	padding: 15px;
+  width: 50%;
+  padding: 15px;
 }
 .form-container .price-wrapper {
-	display: flex;
-	gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 .form-container .user-manage-table-wrapper {
-	width: 100%;
+  width: 100%;
 }
 
 .form-wrapper {
-	width: 90%;
+  width: 90%;
 }
 .form-wrapper form {
-	width: 100%;
+  width: 100%;
 }
 .form-wrapper label {
-	font-family: "Homenaje", sans-serif;
-	font-size: 1.3rem;
-	margin-right: 10px;
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.3rem;
+  margin-right: 10px;
 }
 .form-wrapper input.form-control {
-	font-size: 1.2rem;
-	flex-grow: 1;
+  font-size: 1.2rem;
+  flex-grow: 1;
 }
 .form-wrapper .btn {
-	margin-left: 8px;
-	border-radius: 5px;
-	padding: 12px 15px;
-	background-color: #8abeb9;
-	color: #ffffff;
-	font-family: "Homenaje", sans-serif;
-	font-size: 1.3rem;
+  margin-left: 8px;
+  border-radius: 5px;
+  padding: 12px 15px;
+  background-color: #8abeb9;
+  color: #ffffff;
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.3rem;
 }
 
 #categoryCafeContainer .btn {
-	border-radius: 5px;
-	background: #c1785a;
-	color: #ffffff;
-	font-family: "Homenaje", sans-serif;
-	font-size: 1.3rem;
+  border-radius: 5px;
+  background: #c1785a;
+  color: #ffffff;
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.3rem;
 }
 #categoryCafeContainer label {
-	font-family: "Segoe UI", sans-serif;
-	font-size: 1rem;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1rem;
 }
 
 #selectedCategoriesDisplay.text-muted {
-	display: block;
-	width: 80%;
+  display: block;
+  width: 80%;
 }
 #selectedCategoriesDisplay.text-muted .badge {
-	padding: 5px 7px;
-	font-size: 1.3rem;
-	font-family: "Caveat", cursive;
-	font-weight: 100;
-	color: #ffffff !important;
+  padding: 5px 7px;
+  font-size: 1.3rem;
+  font-family: "Caveat", cursive;
+  font-weight: 100;
+  color: #ffffff !important;
 }
 #selectedCategoriesDisplay.text-muted .badge .btn-close {
-	width: 4px;
-	height: auto;
+  width: 4px;
+  height: auto;
 }
-#selectedCategoriesDisplay.text-muted .badge.cat-productivity,
-#selectedCategoriesDisplay.text-muted .badge.green {
-	background-color: #84994f !important;
+#selectedCategoriesDisplay.text-muted .badge.cat-productivity, #selectedCategoriesDisplay.text-muted .badge.green {
+  background-color: #84994f !important;
 }
-#selectedCategoriesDisplay.text-muted .badge.cat-social,
-#selectedCategoriesDisplay.text-muted .badge.orange {
-	background-color: #fcb53b !important;
+#selectedCategoriesDisplay.text-muted .badge.cat-social, #selectedCategoriesDisplay.text-muted .badge.orange {
+  background-color: #fcb53b !important;
 }
 #selectedCategoriesDisplay.text-muted .badge.cat-roastery {
-	background-color: #c1785a !important;
+  background-color: #c1785a !important;
 }
 #selectedCategoriesDisplay.text-muted .badge.red {
-	background-color: #a72703 !important;
+  background-color: #a72703 !important;
 }
 #selectedCategoriesDisplay.text-muted .badge.cat-default {
-	background-color: #6c757d;
+  background-color: #6c757d;
 }
 
 .add-cafe-container {
-	padding-right: 50px;
-	display: flex;
-	justify-content: flex-end;
+  padding-right: 50px;
+  display: flex;
+  justify-content: flex-end;
 }
 .add-cafe-container .btn.add-cafe {
-	padding: 10px 20px;
-	font-size: 1.3rem;
-	color: #ffffff;
-	background-color: #84994f;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  color: #ffffff;
+  background-color: #84994f;
 }
 .add-cafe-container .btn.add-cafe:hover {
-	background-color: rgb(102.9827586207, 119.3663793103, 61.6336206897);
+  background-color: rgb(102.9827586207, 119.3663793103, 61.6336206897);
 }
 
 .user-manage-table {
-	width: 90%;
+  width: 90%;
 }
 .user-manage-table table {
-	padding-right: 4px;
-	table-layout: fixed;
-	width: 100%;
-	font-size: 1.2rem;
-	font-weight: 100;
+  padding-right: 4px;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 100;
 }
 .user-manage-table.header {
-	background-color: #c1785a;
-	border-radius: 8px;
-	margin-bottom: 5px;
+  background-color: #c1785a;
+  border-radius: 8px;
+  margin-bottom: 5px;
 }
 .user-manage-table.header th {
-	color: #ffffff;
-	font-weight: 100;
-	font-size: 1.4rem;
-	padding: 10px 0 10px 20px;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 1.4rem;
+  padding: 10px 0 10px 20px;
 }
 .user-manage-table.header th#user-table-action {
-	padding-left: 0px;
+  padding-left: 0px;
 }
 .user-manage-table.contents {
-	overflow-y: auto;
-	height: 400px;
+  overflow-y: auto;
+  height: 400px;
 }
 .user-manage-table.contents table {
-	border-collapse: separate;
-	border-spacing: 0 5px;
+  border-collapse: separate;
+  border-spacing: 0 5px;
 }
 .user-manage-table.contents tr td {
-	padding: 5px 0 5px 25px;
+  padding: 5px 0 5px 25px;
 }
 .user-manage-table.contents tr td:first-child {
-	border-radius: 8px 0 0 8px;
+  border-radius: 8px 0 0 8px;
 }
 .user-manage-table.contents tr td:last-child {
-	border-radius: 0 8px 8px 0;
+  border-radius: 0 8px 8px 0;
 }
 
 .cafe-card {
-	background: #fff;
-	border-radius: 14px;
-	padding: 25px;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-	display: flex;
-	gap: 25px;
-	margin-bottom: 30px;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	border: 1px solid rgba(193, 120, 90, 0.1);
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(193, 120, 90, 0.1);
 }
 .cafe-card .cafe-desc-container {
-	max-height: 250px;
-	overflow-y: scroll;
-	margin-bottom: 10px;
+  max-height: 250px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
 }
 .cafe-card .carousel {
-	width: 350px;
-	flex-shrink: 0;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	max-height: 300px;
+  width: 350px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
 }
 .cafe-card .carousel .carousel-inner {
-	height: 100%;
+  height: 100%;
 }
 .cafe-card .carousel .carousel-inner .carousel-item {
-	height: 100%;
+  height: 100%;
 }
 .cafe-card .carousel img.cafeCarouselImg {
-	-o-object-fit: cover;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .cafe-card .card-details {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .cafe-card .card-details .top-row {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .cafe-card .card-details .top-row h2 {
-	margin: 0;
-	font-family: "Homenaje", sans-serif;
-	font-size: 2.8rem;
-	color: #c1785a;
-	line-height: 1;
+  margin: 0;
+  font-family: "Homenaje", sans-serif;
+  font-size: 2.8rem;
+  color: #c1785a;
+  line-height: 1;
 }
 .cafe-card .card-details .top-row .price-rating-wrapper {
-	text-align: right;
+  text-align: right;
 }
 .cafe-card .card-details .top-row .price-rating-wrapper .coffee-rating {
-	color: #fcb53b;
-	display: flex;
-	justify-content: flex-end;
-	margin-bottom: 5px;
+  color: #fcb53b;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
 }
-.cafe-card
-	.card-details
-	.top-row
-	.price-rating-wrapper
-	.coffee-rating
-	.material-symbols-outlined {
-	font-size: 2rem;
+.cafe-card .card-details .top-row .price-rating-wrapper .coffee-rating .material-symbols-outlined {
+  font-size: 2rem;
 }
 .cafe-card .card-details .top-row .price-rating-wrapper .price-range {
-	font-family: "Caveat", cursive;
-	font-weight: bold;
-	font-size: 1.8rem;
-	color: #444;
+  font-family: "Caveat", cursive;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #444;
 }
 .cafe-card .card-details .cafe-location {
-	color: #6c757d;
-	font-size: 1.1rem;
-	margin-top: 5px;
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin-top: 5px;
 }
 .cafe-card .card-details .cafe-location i {
-	color: #c1785a;
+  color: #c1785a;
 }
 .cafe-card .card-details .cafe-desc {
-	margin-top: 15px;
-	color: #444;
-	font-family: "Segoe UI", sans-serif;
-	padding-right: 5px;
-	overflow: hidden;
+  margin-top: 15px;
+  color: #444;
+  font-family: "Segoe UI", sans-serif;
+  padding-right: 5px;
+  overflow: hidden;
 }
 .cafe-card .card-details .action-buttons {
-	margin-top: auto;
-	display: flex;
-	justify-content: flex-end;
-	gap: 10px;
-	padding-top: 15px;
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 15px;
 }
 .cafe-card .card-details .action-buttons .btn {
-	padding: 8px 25px;
-	border-radius: 8px;
-	font-family: "Homenaje", sans-serif;
-	font-size: 1.2rem;
-	transition: 0.2s;
+  padding: 8px 25px;
+  border-radius: 8px;
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.2rem;
+  transition: 0.2s;
 }
 .cafe-card .card-details .action-buttons .btn.delete-btn {
-	background-color: #a72703;
+  background-color: #a72703;
 }
 .cafe-card .card-details .action-buttons .btn.delete-btn:hover {
-	background-color: rgb(116.9, 27.3, 2.1);
+  background-color: rgb(116.9, 27.3, 2.1);
 }
 .cafe-card .card-details .action-buttons .btn.update-btn {
-	background-color: #8abeb9;
+  background-color: #8abeb9;
 }
 .cafe-card .card-details .action-buttons .btn.update-btn:hover {
-	background-color: rgb(105.2142857143, 171.7857142857, 165.3846153846);
+  background-color: rgb(105.2142857143, 171.7857142857, 165.3846153846);
 }
 .cafe-card .card-details .badge {
-	font-family: "Caveat", cursive;
-	font-weight: normal;
-	font-size: 1.5rem !important;
-	padding: 6px 10px !important;
-	margin: 0px 5px 5px 0px;
-	text-transform: capitalize !important;
+  font-family: "Caveat", cursive;
+  font-weight: normal;
+  font-size: 1.5rem !important;
+  padding: 6px 10px !important;
+  margin: 0px 5px 5px 0px;
+  text-transform: capitalize !important;
 }
 .cafe-card .card-details .badge.cat-productivity {
-	background-color: #84994f !important;
-	color: #fff;
+  background-color: #84994f !important;
+  color: #fff;
 }
 .cafe-card .card-details .badge.cat-social {
-	background-color: #fcb53b !important;
-	color: #fff;
+  background-color: #fcb53b !important;
+  color: #fff;
 }
 .cafe-card .card-details .badge.cat-roastery {
-	background-color: #c1785a !important;
-	color: #fff;
+  background-color: #c1785a !important;
+  color: #fff;
 }
 .cafe-card .card-details .badge.red {
-	background-color: #a72703 !important;
-	color: #fff;
+  background-color: #a72703 !important;
+  color: #fff;
 }
 .cafe-card .card-details .badge.cat-default {
-	background-color: #6c757d;
+  background-color: #6c757d;
 }
 
 .filter-container-wrapper {
-	height: auto;
+  height: auto;
 }
 .filter-container-wrapper .filter-container {
-	position: sticky;
-	height: auto;
-	top: 150px;
-	z-index: 10;
-	background-color: #fff;
-	border-radius: 15px;
+  position: sticky;
+  height: auto;
+  top: 150px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 15px;
 }
 
 #updateCafeModal .modal-header {
-	background-color: #c1785a;
-	color: #fff;
-	border-bottom: none;
+  background-color: #c1785a;
+  color: #fff;
+  border-bottom: none;
 }
 #updateCafeModal .modal-header .modal-title {
-	font-family: "Homenaje", sans-serif;
+  font-family: "Homenaje", sans-serif;
 }
 #updateCafeModal .modal-body {
-	background-color: #f7f1de;
+  background-color: #f7f1de;
 }
 #updateCafeModal .modal-body .form-control,
 #updateCafeModal .modal-body .form-select {
-	border: 1px solid rgba(193, 120, 90, 0.3);
-	border-radius: 8px;
-	padding: 10px 15px;
-	font-family: "Segoe UI", sans-serif;
+  border: 1px solid rgba(193, 120, 90, 0.3);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-family: "Segoe UI", sans-serif;
 }
 #updateCafeModal .modal-body .form-control:focus,
 #updateCafeModal .modal-body .form-select:focus {
-	border-color: #c1785a;
-	box-shadow: 0 0 0 4px rgba(193, 120, 90, 0.1);
+  border-color: #c1785a;
+  box-shadow: 0 0 0 4px rgba(193, 120, 90, 0.1);
 }
 #updateCafeModal .modal-body label.form-label {
-	font-family: "Homenaje", sans-serif;
-	font-size: 1.3rem;
-	color: #c1785a;
-	margin-bottom: 5px;
+  font-family: "Homenaje", sans-serif;
+  font-size: 1.3rem;
+  color: #c1785a;
+  margin-bottom: 5px;
 }
 #updateCafeModal .modal-body #category-panel {
-	border: 2px dashed rgba(193, 120, 90, 0.3);
-	background: #fff !important;
+  border: 2px dashed rgba(193, 120, 90, 0.3);
+  background: #fff !important;
 }
 #updateCafeModal .modal-body #category-panel .cat-check {
-	accent-color: #c1785a;
+  accent-color: #c1785a;
 }
 #updateCafeModal .modal-body .card img {
-	border: 2px solid #84994f;
+  border: 2px solid #84994f;
 }
 #updateCafeModal .modal-footer {
-	background-color: #fff;
-	border-top: 1px dashed #c1785a;
-} /*# sourceMappingURL=styles_admin.css.map */
+  background-color: #fff;
+  border-top: 1px dashed #c1785a;
+}/*# sourceMappingURL=styles_admin.css.map */

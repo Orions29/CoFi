@@ -672,6 +672,13 @@ body {
   background-color: #fff;
   border-radius: 15px;
 }
+.filter-container-wrapper .filter-container .filter-btn {
+  color: var(--ca-black);
+}
+.filter-container-wrapper .filter-container .filter-btn:hover {
+  color: #fff !important;
+  background-color: #6c757d !important;
+}
 
 #updateCafeModal .modal-header {
   background-color: #c1785a;
