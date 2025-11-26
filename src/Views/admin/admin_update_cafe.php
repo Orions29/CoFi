@@ -258,7 +258,7 @@ function renderCoffeeRating($rating, $max = 5)
                                 <div class="mb-3">
                                     <button type="button" class="btn w-100 categoryBtn"
                                         style="background-color: var(--ca-secondary); color: white; font-family: 'Homenaje'; font-size: 1.2rem;">
-                                        ⚙ Manage Categories
+                                        <i class="bi bi-gear"></i> Manage Categories
                                     </button>
 
                                     <div id="category-panel" style="display:none; margin-top: 10px; padding: 15px; background: white; border-radius: 8px; border: 1px solid rgba(193, 120, 90, 0.3);">
